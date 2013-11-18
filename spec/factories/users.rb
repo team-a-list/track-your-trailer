@@ -2,8 +2,9 @@
 
 FactoryGirl.define do
   factory :user do
-    name "MyString"
-    email "MyString"
-    phone_number "MyString"
+    name "Emily"
+    email "emily@xie.com"
+    phone_number "555-555-5555"
+    password "test"
   end
 end

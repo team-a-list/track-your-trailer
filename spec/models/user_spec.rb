@@ -1,5 +1,26 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "User Attributes" do
+    it "should have a name" do
+      user = FactoryGirl.create(:user)
+      user.name.should eq("Emily")
+    end 
+
+    it "should have a valid password" do
+      user = FactoryGirl.create(:user)
+      user.password.should eq("test")
+    end
+
+    it "should have an email" do
+      user = FactoryGirl.create(:user)
+      user.email.should eq("emily@xie.com")
+    end
+
+    it "should have a phone number" do
+      user = FactoryGirl.create(:user)
+      user.phone_number.should eq("555-555-5555")
+    end
+
+  end
 end

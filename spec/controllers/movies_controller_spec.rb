@@ -11,8 +11,10 @@ describe MoviesController do
 
   describe 'GET#SHOW' do
     it "should respond with a 200 request" do
-      get :show
+      movie = FactoryGirl.create(:movie)
+      get :show, id: movie
       expect(response.status).to eq(200)
+      expect(response).to render_template :show
     end
   end
 

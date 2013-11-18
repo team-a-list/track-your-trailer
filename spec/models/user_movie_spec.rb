@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe UserMovie do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "Emily likes Chicago" do
+    user_movie = FactoryGirl.create(:user_movie, :user => FactoryGirl.create(:user), :movie => FactoryGirl.create(:movie))
+    user_movie.user.name.should eq("Emily")
+  end
 end
