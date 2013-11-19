@@ -1,0 +1,8 @@
+<%= @user.name %><br>
+<%= @user.email %><br>
+BUT ZOMG THIS MOVIE IS RELEASED ON DVD TODAY ZOMG ZOMG ZOMG<br>
+
+<% @user.movie_notifications(@notify_day).each do |movie| %>
+  <%= movie.name %><br>
+  <img src="<%= movie.poster_image %>" height="500px"> <br>
+<% end %>
