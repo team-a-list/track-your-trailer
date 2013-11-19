@@ -14,11 +14,9 @@ class Users::MoviesController < ApplicationController
 
 end
 
-
-
-UserMovie.all.each do |notification|
-  if notification.not_sent?
-    ActionMailerGuy::send(:to => notification.user.email, :msg => "#{notification.movie.name} is coming out soon!")
-    notification.sent = true
-  end
-end
+# UserMovie.all.each do |notification|
+#   if notification.not_sent?
+#     ActionMailerGuy::send(:to => notification.user.email, :msg => "#{notification.movie.name} is coming out soon!")
+#     notification.sent = true
+#   end
+# end
