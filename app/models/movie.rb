@@ -5,7 +5,7 @@ class Movie < ActiveRecord::Base
   def self.movies_released(days_until = 0)
     theater = Movie.theater_movies_released(days_until)
     dvd = Movie.dvd_movies_released(days_until)
-    (theater << dvd).flatten
+    theater.concat(dvd)
   end
 
   def self.theater_movies_released(days_until = 0)

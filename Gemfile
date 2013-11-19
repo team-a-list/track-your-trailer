@@ -36,6 +36,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -60,4 +61,5 @@ group :test, :development do
   gem "database_cleaner"
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
+  gem "letter_opener"
 end
