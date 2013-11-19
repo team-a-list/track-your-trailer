@@ -6,4 +6,5 @@ See it on DVD on:
 
 <img src="<%= @movie.poster_image %>" height="300px"><br>
 
-<%= link_to "ADD THIS MOVIE", user_movies_path(3, :movie_id => @movie.id), :method => :post %>
+<!-- TODO - update the user id in this path -->
+<%= link_to "Add this movie", user_movies_path(3, :movie_id => @movie.id), :method => :post %>
