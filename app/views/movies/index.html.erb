@@ -1,7 +1,8 @@
+<% Time::DATE_FORMATS[:nice_date] = "%B %d, %Y"%>
 <% @movies.each do |movie| %>
   <%= link_to movie.name, movie %><br>
-  <%= movie.release_date_theater %><br>
-  <%= movie.release_date_dvd if !nil? %><br>
+  <%= movie.release_date_theater.to_formatted_s(:nice_date) %><br>
+  <%= movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br>
   <img src="<%= movie.poster_image %>" height="300px"><br>
   <br>
 
