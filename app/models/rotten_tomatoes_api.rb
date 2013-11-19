@@ -17,17 +17,7 @@ class RottenTomatoesApi
     HTTParty.get("http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/upcoming.json?apikey=#{API_KEY}&page_limit=5", :format => :json)
   end
 
-# # movie info =
-# movie["title"]
 
-# # movie theater release =
-# movie["release_dates"]["theater"]
-
-# # movie dvd release =
-# movie["release_dates"]["dvd"]
-
-# # movie poster image link
-# movie["posters"]["original"]
 
 # # movie search , we can limit to 1-5 maybe
 # HTTParty.get('http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=[API KEY GOES HERE]&q=toy%20story%203&page_limit=5', :format => :json)
