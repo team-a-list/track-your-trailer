@@ -1,4 +1,12 @@
-<%= @movie.name %><br>
+<h3><%= @movie.name %></h3><br>
+See it in theaters on:
 <%= @movie.release_date_theater.to_formatted_s(:nice_date) %><br>
+See it on DVD on:
 <%= @movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br><br>
+
 <img src="<%= @movie.poster_image %>" height="300px"><br>
+
+
+<!-- We want a link that will eventually create a row in the user_movies table -->
+<!-- Which controller should handle this? user_movies controller - create -->
+<!-- We want a link that will eventually create a row in the user_movies table -->
