@@ -5,12 +5,15 @@ class User < ActiveRecord::Base
   validates :email, :uniqueness => true
 
   def self.users_for(notify_day = 0)
-    movie_list = Movie.movies_released(notify_day)
-
-    # movie_list.collect(&:users).uniq(&:name).flatten
-    
-    movie_list.collect do |movie|
-      movie.users.uniq(&:email)
-    end.flatten
+    movie_list = Movie.includes(:users).movies_released(notify_day)
+    movie_list.map{|movie| movie.users}.flatten.uniq
+    #UserMovie.where(:movie_id => movie_list)
   end
+
+  def movie_notifications(notify_day = 0)
+    theater = self.movies.where(:release_date_theater => Time.zone.now.days_since(notify_day).beginning_of_day)
+    dvd = self.movies.where(:release_date_dvd => Time.zone.now.days_since(notify_day).beginning_of_day)
+    theater.concat(dvd)
+  end
+
 end
