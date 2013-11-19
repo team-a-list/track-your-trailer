@@ -1,1 +1,4 @@
-<%= @movie.name %>
+<%= @movie.name %><br>
+<%= @movie.release_date_theater.to_formatted_s(:nice_date) %><br>
+<%= @movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br><br>
+<img src="<%= @movie.poster_image %>" height="300px"><br>
