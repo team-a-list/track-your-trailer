@@ -1,0 +1,11 @@
+<%= @user.name %><br>
+<%= @user.email %><br>
+<%= @user.movies.collect{|movie| movie.name}.to_sentence %><br>
+
+
+BUT ZOMG THIS MOVIE IS RELEASED ON DVD TODAY ZOMG ZOMG ZOMG<br>
+
+<% @user.movies.where(:release_date_dvd => Time.zone.now.days_since(0).beginning_of_day).each do |movie| %>
+  <%= movie.name %><br>
+  <img src="<%= movie.poster_image %>" height="500px"> <br>
+<% end %>
