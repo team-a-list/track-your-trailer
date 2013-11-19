@@ -5,7 +5,9 @@
 <h3>Movies You Wanna See:</h3>
 
 <% @user.movies.each do |movie| %>
-<p><%= link_to movie.name, movie %></p>
+<p><%= link_to movie.name, movie %> | <%= link_to "Remove", user_movie_path(@user, movie), :method => :delete, data: { confirm: 'Are you sure?' } %></p>
+
+
 <% end %>
 
 
