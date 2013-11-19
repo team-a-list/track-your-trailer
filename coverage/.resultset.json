@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Emily/Development/code/track-your-trailer/app/controllers/movies_controller.rb": [
+      "/Users/GregEng/Development/code/flatiron/projects-rails/track-your-trailer/app/controllers/movies_controller.rb": [
         1,
         null,
         1,
@@ -13,36 +13,36 @@
         null,
         null
       ],
-      "/Users/Emily/Development/code/track-your-trailer/app/controllers/application_controller.rb": [
+      "/Users/GregEng/Development/code/flatiron/projects-rails/track-your-trailer/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/Emily/Development/code/track-your-trailer/app/controllers/users_controller.rb": [
+      "/Users/GregEng/Development/code/flatiron/projects-rails/track-your-trailer/app/controllers/users_controller.rb": [
         1,
         null
       ],
-      "/Users/Emily/Development/code/track-your-trailer/app/models/movie.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/Emily/Development/code/track-your-trailer/app/models/user_movie.rb": [
+      "/Users/GregEng/Development/code/flatiron/projects-rails/track-your-trailer/app/models/movie.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/Emily/Development/code/track-your-trailer/app/models/user.rb": [
+      "/Users/GregEng/Development/code/flatiron/projects-rails/track-your-trailer/app/models/user_movie.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/GregEng/Development/code/flatiron/projects-rails/track-your-trailer/app/models/user.rb": [
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1384824972
+    "timestamp": 1384828454
   }
 }
