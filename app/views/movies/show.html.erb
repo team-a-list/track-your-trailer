@@ -1,1 +1,10 @@
-<%= @movie.name %>
+<h3><%= @movie.name %></h3><br>
+See it in theaters on:
+<%= @movie.release_date_theater.to_formatted_s(:nice_date) %><br>
+See it on DVD on:
+<%= @movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br><br>
+
+<img src="<%= @movie.poster_image %>" height="300px"><br>
+
+<!-- TODO - update the user id in this path -->
+<%= link_to "Add this movie", user_movies_path(3, :movie_id => @movie.id), :method => :post %>
