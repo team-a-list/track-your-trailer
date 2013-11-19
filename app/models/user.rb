@@ -11,8 +11,9 @@ class User < ActiveRecord::Base
   end
 
   def movie_notifications(notify_day = 0)
-    self.movies.where(:release_date_theater => Time.zone.now.days_since(notify_day).beginning_of_day)
+    theater = self.movies.where(:release_date_theater => Time.zone.now.days_since(notify_day).beginning_of_day)
+    dvd = self.movies.where(:release_date_dvd => Time.zone.now.days_since(notify_day).beginning_of_day)
+    theater.concat(dvd)
   end
-
 
 end
