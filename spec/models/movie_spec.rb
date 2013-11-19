@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Movie do
+  
   describe "Movie attributes" do
     it "should have a name" do
       movie = FactoryGirl.create(:movie)
