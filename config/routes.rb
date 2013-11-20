@@ -5,6 +5,10 @@ TrackYourTrailer::Application.routes.draw do
     resources :movies, :controller => 'users/movies', only:[:create, :update, :new, :destroy]
   end
 
+  get '/login' => 'sessions#new', :as => 'login'
+  get '/logout' => 'sessions#destroy', :as => 'logout'
+  post '/sessions' => 'sessions#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

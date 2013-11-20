@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :user_movies
   has_many :movies, :through => :user_movies
 
+  has_secure_password
+
   validates :email, :uniqueness => true
 
   def self.users_for(notify_day = 0)
