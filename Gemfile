@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -58,6 +55,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'debugger', group: [:development, :test]
 
 group :test, :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
   gem "rspec-rails"
   gem "capybara"
   gem "selenium-webdriver"
@@ -71,3 +70,9 @@ group :test, :development do
   gem "guard-rspec"
   gem "letter_opener"
 end
+
+group :production do
+  gem "rails_12factor"
+  gem "pg"
+end
+
