@@ -1,7 +1,7 @@
 <%= form_tag(sessions_path) do %>
   Email: <%= text_field_tag :email %><br>
-  Password: <%= text_field_tag :password %><br>
-  Password Confirmation: <%= text_field_tag :password_confirmation %><br>
+  Password: <%= password_field_tag :password %><br>
+  Password Confirmation: <%= password_field_tag :password_confirmation %><br>
   <%= submit_tag "Login" %>
 <% end %>
 
