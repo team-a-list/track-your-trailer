@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= "Logged in As: #{User.find_by(:id => session[:user_id]).name}" if session[:user_id] %>
+<%= link_to "Logout", logout_path if session[:user_id] %><br><br>
 
 <%= yield %>
 
