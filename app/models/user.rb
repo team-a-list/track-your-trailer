@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :user_movies
   has_many :movies, :through => :user_movies
+  
   has_secure_password
 
   phony_normalize :phone_number, :default_country_code => "US"
