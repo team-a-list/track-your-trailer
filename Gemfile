@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 # HTTParty for the RottenTomatoes API calls
 gem 'httparty', '0.12.0'
 
+# Twilio gem for text message notifications
+gem 'twilio-ruby', '3.11.4'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
