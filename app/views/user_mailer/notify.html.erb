@@ -1,6 +1,6 @@
 <%= @user.name %><br>
 <%= @user.email %><br>
-BUT ZOMG THIS MOVIE IS RELEASED ON DVD TODAY ZOMG ZOMG ZOMG<br>
+THIS MOVIE IS RELEASED TODAY:<br>
 
 <% @user.movie_notifications(@notify_day).each do |movie| %>
   <%= movie.name %><br>

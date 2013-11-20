@@ -22,6 +22,10 @@ class User < ActiveRecord::Base
     theater.concat(dvd)
   end
 
+  def text_notification(notify_day)
+    self.movie_notifications(notify_day).collect(&:name).to_sentence[0..140]
+  end
+
   # def normalize_phone
   #   self.phone_number = "+1" + read_attribute(:phone_number).gsub(/\D/,"")
   # end
