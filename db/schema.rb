@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131118212706) do
+ActiveRecord::Schema.define(version: 20131120023517) do
 
   create_table "movies", force: true do |t|
     t.string   "name"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20131118212706) do
     t.string   "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password"
+    t.string   "password_digest"
   end
 
 end

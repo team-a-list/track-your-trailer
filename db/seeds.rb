@@ -12,9 +12,9 @@ movie3 = Movie.create(name: "The World's End", release_date_theater: "2013-08-23
 movie4 = Movie.create(name: "The Wolf of Wall Street", release_date_theater: "2013-12-25", release_date_dvd: nil, poster_image: "http://content6.flixster.com/movie/11/17/19/11171924_ori.jpg")
 
 
-user1 = User.create(name: "Emily", email: "emily@xie.com", phone_number: "207-999-9999", password: "test")
-user2 = User.create(name: "David", email: "david@bella.com", phone_number: "999-999-9999", password: "test")
-user3 = User.create(name: "Greg", email: "greg@eng.com", phone_number: "555-555-5555", password: "test")
+user1 = User.create(name: "Emily", email: "emily@xie.com", phone_number: "207-999-9999", password: "test", password_confirmation: "test")
+user2 = User.create(name: "David", email: "david@bella.com", phone_number: "999-999-9999", password: "test", password_confirmation: "test")
+user3 = User.create(name: "Greg", email: "greg@eng.com", phone_number: "555-555-5555", password: "test", password_confirmation: "test")
 
 user_movies1 = UserMovie.create(user: user1, movie: movie1)
 user_movies2 = UserMovie.create(user: user1, movie: movie2)
