@@ -5,7 +5,7 @@ class Users::MoviesController < ApplicationController
       UserMovie.find_or_create_by(:user_id => params[:user_id], :movie_id => params[:movie_id])
       redirect_to user_path(params[:user_id])
     else
-      redirect_to :back
+      redirect_to :back, :notice => "You can't add a movie to another user!"
     end
   end
 
