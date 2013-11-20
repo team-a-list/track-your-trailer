@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :login_required
 
+  def authorized?(id)
+    
+  end
+
   def login_required
     if !user_logged_in?
       redirect_to login_path

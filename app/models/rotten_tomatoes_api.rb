@@ -18,8 +18,8 @@ class RottenTomatoesApi
   end
 
   def self.seed_upcoming_movies
-      self.upcoming_movies["movies"].each do |movie|
-        Movie.create_from_rotten(movie)
+    self.upcoming_movies["movies"].each do |movie|
+      Movie.create_from_rotten(movie)
     end
   end
 
