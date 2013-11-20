@@ -84,7 +84,7 @@ TrackYourTrailer::Application.configure do
     port:                 587,
     domain:               'trackyourtrailer.com',
     user_name:            'trackyourtrailer@gmail.com',
-    password:             open('lib/assets/.gmail_password').read,
+    password:             ENV['GMAIL_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true
   }
