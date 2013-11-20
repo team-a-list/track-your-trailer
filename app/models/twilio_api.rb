@@ -13,7 +13,12 @@ class TwilioApi
     puts message.sid
   end
 
-  def notify(user, notify_day)
+  def self.notify(user, notify_day)
+    message = @CLIENT.account.sms.messages.create(
+      :body => "Playing today: " + user.text_notification(notify_day),
+      :to => user.phone_number,
+      :from => NUMBER )
+    puts message.sid
   end
 
 end
