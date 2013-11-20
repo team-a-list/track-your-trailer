@@ -17,11 +17,16 @@ class UsersController < ApplicationController
   end
 
   def index
+    # if admin
     @users = User.all
   end
 
   def show
-    @user = User.find(params[:id])
+    if params[:id].to_i == @current_user.id
+      @user = User.find(params[:id])
+    else
+      redirect_to root_path, :notice => "You aren't that user!"
+    end
   end
 
   private
