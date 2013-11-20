@@ -1,3 +1,7 @@
+<% if notice %>
+  <%= notice %><br><br>
+<% end %>
+
 <h3><%= @movie.name %></h3><br>
 See it in theaters on:
 <%= @movie.release_date_theater.to_formatted_s(:nice_date) %><br>

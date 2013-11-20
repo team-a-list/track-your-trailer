@@ -1,3 +1,7 @@
+<% if notice %>
+  <%= notice %><br><br>
+<% end %>
+
 <% Time::DATE_FORMATS[:nice_date] = "%B %d, %Y"%>
 <% @movies.each do |movie| %>
   <%= link_to movie.name, movie %><br>
