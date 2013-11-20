@@ -41,7 +41,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -56,6 +55,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :test, :development do
   # Use sqlite3 as the database for Active Record
+  gem 'dotenv-rails'
   gem 'sqlite3'
   gem "rspec-rails"
   gem "capybara"
