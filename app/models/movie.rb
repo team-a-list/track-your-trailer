@@ -24,7 +24,8 @@ class Movie < ActiveRecord::Base
       :name => movie_hash["title"],
       :release_date_theater => movie_hash["release_dates"]["theater"],
       :release_date_dvd => movie_hash["release_dates"]["dvd"],
-      :poster_image => movie_hash["posters"]["original"]
+      :poster_image => movie_hash["posters"]["original"],
+      :rotten_tomatoes_uri => movie_hash["id"]
     )
   end
 

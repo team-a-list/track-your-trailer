@@ -9,7 +9,7 @@ describe Movie do
     it 'is valid without a theater release date' do
       expect(build(:movie, release_date_theater: nil)).to be_valid
     end
-    
+
     it 'is valid without a dvd release date' do
       expect(build(:movie, release_date_dvd: nil)).to be_valid
     end
@@ -33,7 +33,10 @@ describe Movie do
   end
 
   describe 'Class methods' do
-    it 'creates a movie based on a hash structure returned from Rotten Tomatoes'
+    it 'creates a movie based on a hash structure returned from Rotten Tomatoes' do
+      parsed_response={"id"=>"771250004", "title"=>"The Hunger Games: Catching Fire", "year"=>2013, "mpaa_rating"=>"PG-13", "runtime"=>146, "critics_consensus"=>"Smart, smoothly directed, and enriched with a deeper exploration of the franchise's thought-provoking themes, Catching Fire proves a thoroughly compelling second installment in the Hunger Games series.", "release_dates"=>{"theater"=>"2013-11-22"}, "ratings"=>{"critics_rating"=>"Certified Fresh", "critics_score"=>95, "audience_score"=>99}, "synopsis"=>"THE HUNGER GAMES: CATCHING FIRE begins as Katniss Everdeen has returned home safe after winning the 74th Annual Hunger Games along with fellow tribute Peeta Mellark. Winning means that they must turn around and leave their family and close friends, embarking on a \"Victor's Tour\" of the districts. Along the way Katniss senses that a rebellion is simmering, but the Capitol is still very much in control as President Snow prepares the 75th Annual Hunger Games (The Quarter Quell) - a competition that could change Panem forever. (c) Lionsgate", "posters"=>{"thumbnail"=>"http://content7.flixster.com/movie/11/17/38/11173861_mob.jpg", "profile"=>"http://content7.flixster.com/movie/11/17/38/11173861_pro.jpg", "detailed"=>"http://content7.flixster.com/movie/11/17/38/11173861_det.jpg", "original"=>"http://content7.flixster.com/movie/11/17/38/11173861_ori.jpg"}, "abridged_cast"=>[{"name"=>"Jennifer Lawrence", "id"=>"770800260", "characters"=>["Katniss Everdeen"]}, {"name"=>"Josh Hutcherson", "id"=>"162654356", "characters"=>["Peeta Mellark"]}, {"name"=>"Liam Hemsworth", "id"=>"770833479", "characters"=>["Gale Hawthorne"]}, {"name"=>"Elizabeth Banks", "id"=>"162653584", "characters"=>["Effie Trinket"]}, {"name"=>"Stanley Tucci", "id"=>"162661152", "characters"=>["Caesar Flickerman"]}], "alternate_ids"=>{"imdb"=>"1951264"}, "links"=>{"self"=>"http://api.rottentomatoes.com/api/public/v1.0/movies/771250004.json", "alternate"=>"http://www.rottentomatoes.com/m/the_hunger_games_catching_fire/", "cast"=>"http://api.rottentomatoes.com/api/public/v1.0/movies/771250004/cast.json", "clips"=>"http://api.rottentomatoes.com/api/public/v1.0/movies/771250004/clips.json", "reviews"=>"http://api.rottentomatoes.com/api/public/v1.0/movies/771250004/reviews.json", "similar"=>"http://api.rottentomatoes.com/api/public/v1.0/movies/771250004/similar.json"}}
+      expect(Movie.create_from_rotten(parsed_response)).to be_valid
+    end
 
     it 'returns a list of movies releasing in theaters today' do
       movie = create(:theater_movie_today)
@@ -92,5 +95,5 @@ describe Movie do
       expect(movie.users.count).to eq(1)
     end
   end
-  
+
 end
