@@ -1,17 +1,25 @@
 namespace :notify do
+  def days_ahead(args)
+    if args.class == Fixnum
+      args 
+    else
+      args.days.to_i
+    end
+  end
+
   desc "This handles the notifications"
 
   task :email, [:days] => :environment do |t, args|
-    users_to_notify = User.users_for(args.days.to_i)
+    users_to_notify = User.users_for(days_ahead(args))
     users_to_notify.each do |user|
-      UserMailer.notify(user, args.days.to_i).deliver!
+      UserMailer.notify(user, days_ahead(args)).deliver!
     end
   end
 
   task :text, [:days] => :environment do |t, args|
-    users_to_notify = User.users_for(args.days.to_i)
+    users_to_notify = User.users_for(days_ahead(args))
     users_to_notify.each do |user|
-      TwilioApi.notify(user, args.days.to_i)
+      TwilioApi.notify(user, days_ahead(args))
     end
   end
 
