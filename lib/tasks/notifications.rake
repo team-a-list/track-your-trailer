@@ -46,5 +46,7 @@ end
 namespace :update do
   task :movies do
     # update existing movies
+    # movies model - give me all the movies in the database without a release date, 
+    # or a dvd rlease date. and then if that is the case, we fill that out.
   end
 end

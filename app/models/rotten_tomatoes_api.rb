@@ -16,15 +16,24 @@ class RottenTomatoesApi
     HTTParty.get("http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/upcoming.json?apikey=#{ENV['API_KEY']}&page_limit=5", :format => :json)
   end
 
-  def self.seed_upcoming_movies
+  def self.seed_upcoming_theater
     self.upcoming_movies["movies"].each do |movie|
       Movie.create_from_rotten(movie)
     end
   end
 
   def self.seed_upcoming_dvds
-      self.upcoming_dvds["movies"].each do |movie|
-        Movie.create_from_rotten(movie)
+    self.upcoming_dvds["movies"].each do |movie|
+      Movie.create_from_rotten(movie)
+    end
+  end
+
+  def self.update_existing_movies
+    movies = Movie.find_movies_without_release_dates
+    movies.each do |movie| 
+      binding.pry
+      movie_hash = self.get_movie(movie.rotten_tomatoes_uri)
+      movie.update_from_rotten(movie_hash)
     end
   end
 
