@@ -20,12 +20,25 @@ class Movie < ActiveRecord::Base
   end
 
   def self.create_from_rotten(movie_hash)
-    Movie.create(
-      :name => movie_hash["title"],
+    if !Movie.find_by(:rotten_tomatoes_uri => movie_hash[:rotten_tomatoes_uri])
+      Movie.create(
+        :name => movie_hash["title"],
+        :release_date_theater => movie_hash["release_dates"]["theater"],
+        :release_date_dvd => movie_hash["release_dates"]["dvd"],
+        :poster_image => movie_hash["posters"]["original"],
+        :rotten_tomatoes_uri => movie_hash["id"]
+      )
+    end
+  end
+
+  def self.find_movies_without_release_dates
+    self.where("release_date_dvd is null OR release_date_theater is null")
+  end
+
+  def update_from_rotten(movie_hash)
+    self.update(
       :release_date_theater => movie_hash["release_dates"]["theater"],
-      :release_date_dvd => movie_hash["release_dates"]["dvd"],
-      :poster_image => movie_hash["posters"]["original"],
-      :rotten_tomatoes_uri => movie_hash["id"]
+      :release_date_dvd => movie_hash["release_dates"]["dvd"]
     )
   end
 
