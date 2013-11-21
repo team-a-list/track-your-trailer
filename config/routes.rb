@@ -9,6 +9,10 @@ TrackYourTrailer::Application.routes.draw do
   get '/logout' => 'sessions#destroy', :as => 'logout'
   post '/sessions' => 'sessions#create'
 
+  get '/results' => 'search#index', :as => 'results'
+  get '/search' => 'search#new', :as => 'search'
+  # post '/search' => 'search#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
