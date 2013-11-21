@@ -39,6 +39,9 @@ gem 'phony_rails', '0.4.2'
 # Clockwork gem for scheduling background jobs
 gem 'clockwork', '0.7.0'
 
+# Twitter Bootstrap styling
+gem 'twitter-bootstrap-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
