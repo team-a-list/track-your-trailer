@@ -2,6 +2,9 @@ class Movie < ActiveRecord::Base
   has_many :user_movies
   has_many :users, :through => :user_movies
 
+  validates :name, :rotten_tomatoes_uri, :presence => true
+  validates :rotten_tomatoes_uri, :uniqueness => true
+
   def self.movies_released(days_until = 0)
     theater = Movie.theater_movies_released(days_until)
     dvd = Movie.dvd_movies_released(days_until)
