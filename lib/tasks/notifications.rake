@@ -2,7 +2,7 @@ namespace :notify do
 
   def days_ahead(args)
     if args.class == Fixnum
-      args 
+      args
     else
       args.days.to_i
     end
@@ -33,20 +33,18 @@ end
 
 namespace :populate do
 
-  task :theater do
-    # populate new movies with theater release dates
+  task :theater => :environment do
+    RottenTomatoesApi.seed_upcoming_theater
   end
 
-  task :dvd do
-    # populate new movies with theater release dates
+  task :dvd => :environment do
+    RottenTomatoesApi.seed_upcoming_dvds
   end
 
 end
 
 namespace :update do
-  task :movies do
-    # update existing movies
-    # movies model - give me all the movies in the database without a release date, 
-    # or a dvd rlease date. and then if that is the case, we fill that out.
+  task :movies => :environment do
+    RottenTomatoesApi.update_existing_movies
   end
 end
