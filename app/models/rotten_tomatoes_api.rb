@@ -30,8 +30,7 @@ class RottenTomatoesApi
 
   def self.update_existing_movies
     movies = Movie.find_movies_without_release_dates
-    movies.each do |movie| 
-      binding.pry
+    movies.each do |movie|
       movie_hash = self.get_movie(movie.rotten_tomatoes_uri)
       movie.update_from_rotten(movie_hash)
     end

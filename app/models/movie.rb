@@ -36,7 +36,6 @@ class Movie < ActiveRecord::Base
   end
 
   def update_from_rotten(movie_hash)
-    binding.pry
     self.update(
       :release_date_theater => movie_hash["release_dates"]["theater"],
       :release_date_dvd => movie_hash["release_dates"]["dvd"]
