@@ -15,6 +15,7 @@
 /log/*.log
 /tmp
 
+<<<<<<< HEAD
 # Ignore RottenTomatoes API key.
 /lib/assets/.rotten_tomatoes_api_key
 
@@ -29,3 +30,6 @@
 
 # Ignore .env
 .env
+
+# Ignore output from simplecov
+/coverage
