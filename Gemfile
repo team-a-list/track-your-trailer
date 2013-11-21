@@ -40,8 +40,8 @@ gem 'phony_rails', '0.4.2'
 gem 'clockwork', '0.7.0'
 
 # Gems to make Heroku styling work
-gem 'sass-rails',   '~> 3.1.3'
-gem 'coffee-rails', '~> 3.2.1'
+# gem 'sass-rails',   '~> 3.1.3'
+# gem 'coffee-rails', '~> 3.2.1'
 gem 'less-rails'
 
 # Twitter Bootstrap styling
