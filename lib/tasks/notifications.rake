@@ -30,3 +30,20 @@ namespace :notify do
 
 end
 
+namespace :populate do
+
+  task :theater do
+    # populate new movies with theater release dates
+  end
+
+  task :dvd do
+    # populate new movies with theater release dates
+  end
+
+end
+
+namespace :update do
+  task :movies do
+    # update existing movies
+  end
+end
