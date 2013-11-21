@@ -26,3 +26,6 @@
 
 # Ignore the gmail password
 /lib/assets/.gmail_password
+
+# .env
+.env
