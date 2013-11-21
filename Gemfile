@@ -34,7 +34,10 @@ gem 'twilio-ruby', '3.11.4'
 gem 'phony_rails', '0.4.2'
 
 # Whenever gem for scheduling background jobs
-gem 'whenever', '0.8.4'
+# gem 'whenever', '0.8.4'
+
+# Clockwork gem for scheduling background jobs
+gem 'clockwork', '0.7.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -56,6 +59,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :test, :development do
   # Use sqlite3 as the database for Active Record
+ 
+  gem 'dotenv-rails'
   gem 'sqlite3'
   gem "rspec-rails"
   gem "capybara"

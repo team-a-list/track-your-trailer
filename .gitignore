@@ -15,14 +15,8 @@
 /log/*.log
 /tmp
 
-# Ignore RottenTomatoes API key.
-/lib/assets/.rotten_tomatoes_api_key
+# Ignore .env
+.env
 
-# Ignore Twilio SID.
-/lib/assets/.twilio_sid
-
-# Ignore Twilio Auth Token.
-/lib/assets/.twilio_auth_token
-
-# Ignore the gmail password
-/lib/assets/.gmail_password
+# Ignore output from simplecov
+/coverage

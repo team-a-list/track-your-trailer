@@ -2,6 +2,9 @@ class Movie < ActiveRecord::Base
   has_many :user_movies
   has_many :users, :through => :user_movies
 
+  validates :name, :rotten_tomatoes_uri, :presence => true
+  validates :rotten_tomatoes_uri, :uniqueness => true
+
   def self.movies_released(days_until = 0)
     theater = Movie.theater_movies_released(days_until)
     dvd = Movie.dvd_movies_released(days_until)
@@ -21,8 +24,9 @@ class Movie < ActiveRecord::Base
       :name => movie_hash["title"],
       :release_date_theater => movie_hash["release_dates"]["theater"],
       :release_date_dvd => movie_hash["release_dates"]["dvd"],
-      :poster_image => movie_hash["posters"]["original"]
-      )
+      :poster_image => movie_hash["posters"]["original"],
+      :rotten_tomatoes_uri => movie_hash["id"]
+    )
   end
 
 end
