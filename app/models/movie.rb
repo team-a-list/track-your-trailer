@@ -22,7 +22,7 @@ class Movie < ActiveRecord::Base
       :release_date_theater => movie_hash["release_dates"]["theater"],
       :release_date_dvd => movie_hash["release_dates"]["dvd"],
       :poster_image => movie_hash["posters"]["original"]
-      )
+    )
   end
 
 end
