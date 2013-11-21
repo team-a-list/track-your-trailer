@@ -16,6 +16,12 @@ class RottenTomatoesApi
     HTTParty.get("http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/upcoming.json?apikey=#{ENV['API_KEY']}&page_limit=5", :format => :json)
   end
 
+  def self.seed_search(search_string)
+    self.search(search_string)["movies"].collect do |movie|
+      Movie.create_from_rotten(movie)
+    end
+  end
+
   def self.seed_upcoming_theater
     self.upcoming_movies["movies"].each do |movie|
       Movie.create_from_rotten(movie)
