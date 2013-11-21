@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+.movie {
+  height: 300px;
+}
+
+body {
+  align: center;
+}
