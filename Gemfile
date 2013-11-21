@@ -39,13 +39,11 @@ gem 'phony_rails', '0.4.2'
 # Clockwork gem for scheduling background jobs
 gem 'clockwork', '0.7.0'
 
-# Gems to make Heroku styling work
-# gem 'sass-rails',   '~> 3.1.3'
-# gem 'coffee-rails', '~> 3.2.1'
-gem 'less-rails'
-
 # Twitter Bootstrap styling
+gem "therubyracer"
+gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+# http://stackoverflow.com/questions/15352901/rails-4-app-on-heroku-works-but-errors-in-log
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
