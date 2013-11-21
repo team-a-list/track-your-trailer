@@ -9,7 +9,7 @@ See it in theaters on:
 <%= movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br>
 See it in DVD on:
 <%= movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br>
+<% if movie.poster_image != "http://images.rottentomatoescdn.com/images/redesign/poster_default.gif" %>
   <img src="<%= movie.poster_image %>" height="300px"><br>
-  <br>
-
+  <% end %><br>
 <% end %>
