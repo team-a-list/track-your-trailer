@@ -21,7 +21,6 @@ $(document).ready(function(){
    });
 
     $('.carousel-control').hide();
-    // $('.carousel-control').hide();
 
    $('.carousel').hover(
     function(){
@@ -29,6 +28,19 @@ $(document).ready(function(){
     function(){
       $('.carousel-control').fadeOut(300);
    });
+
+  $('.behind').hide()
+
+  $('.hover').hover(function(){
+    $(this).find('.img-responsive').fadeTo(200,0.2);
+    $(this).find('.behind').fadeTo(200,1);
+  },function(){
+    $(this).find('.img-responsive').fadeTo(200,1);
+
+    $(this).find('.behind').fadeTo(200,0);
+  }
+  );
+
 
  });
 
