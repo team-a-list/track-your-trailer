@@ -13,6 +13,9 @@ TrackYourTrailer::Application.routes.draw do
 
   get '/results' => 'search#index', :as => 'results'
   get '/search' => 'search#new', :as => 'search'
+
+  # devise_for :users, :controllers => { :registrations => "registrations" }
+
   # post '/search' => 'search#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
