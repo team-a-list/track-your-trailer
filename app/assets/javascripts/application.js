@@ -19,6 +19,16 @@ $(document).ready(function(){
    $('.carousel').carousel({
      interval: 4000
    });
- });
 
+    $('.carousel-control').hide();
+    // $('.carousel-control').hide();
+
+   $('.carousel').hover(
+    function(){
+      $('.carousel-control').fadeIn(500),
+    function(){
+      $('.carousel-control').fadeOut(300);
+   });
+
+ });
 
