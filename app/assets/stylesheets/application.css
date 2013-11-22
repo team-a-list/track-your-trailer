@@ -12,8 +12,12 @@
  *= require_tree .
  */
 
+.img-responsive {
+  height: 450px;
+}
+
 .movie {
-  height: 300px;
+  height: 100px;
 }
 
 body {
