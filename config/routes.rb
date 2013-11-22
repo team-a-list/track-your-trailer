@@ -1,5 +1,6 @@
 TrackYourTrailer::Application.routes.draw do
   resources :movies
+  get '/all_movies' => 'movies#all_movies'
 
   resources :users do
     resources :movies, :controller => 'users/movies', only:[:create, :update, :new, :destroy]
