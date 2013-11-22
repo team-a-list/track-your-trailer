@@ -22,7 +22,7 @@
 }
 
 body {
-  align: center;
+  align: left;
 }
 
 .behind {
@@ -31,5 +31,14 @@ body {
   position:relative;
   top:-300px;
   padding:10px;
+
 }
 
+.movie_background {
+  background: black;
+  display: inline-block;
+}
+
+.movie_font {
+  color: #EAEAEA;
+}

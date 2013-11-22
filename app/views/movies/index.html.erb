@@ -9,13 +9,15 @@
     <div class="carousel-inner">
       <div class="item active">
         <div class="hover">
-        <div class="col-xs-3"><a href="<%= movie_path(@first_movie) %>"><img src="<%= @first_movie.poster_image %>" class="img-responsive"></a><br>
-          <div class="behind">
-                <%= link_to @first_movie.name, @first_movie %><br>
-                See it in theaters on:
-                <%= @first_movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br>
-                See it in DVD on:
-                <%= @first_movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br>
+
+
+<div class="col-xs-3"><a href="<%= movie_path(@first_movie) %>"><div class="movie_background"><img src="<%= @first_movie.poster_image %>" class="img-responsive"></div></a><br>
+          <div class="behind movie_font">
+                <%= link_to @first_movie.name, @first_movie %><br><br>
+                See it in theaters on:<br>
+                <%= @first_movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br><br>
+                See it in DVD on:<br>
+                <%= @first_movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br><br>
                 <%= link_to "Add this movie", user_movies_path(current_user, :movie_id => @first_movie), :method => :post %>
             </div>
         </div>
@@ -24,13 +26,13 @@
       <% @other_movies.each do |movie| %>
       <div class="item">
         <div class="hover">
-        <div class="col-xs-3"><a href="<%= movie_path(movie) %>"><br><img src="<%= movie.poster_image %>"class="img-responsive"></a><br>
-          <div class="behind">
-            <%= link_to movie.name, movie %><br>
-              See it in theaters on:
-              <%= movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br>
-              See it in DVD on:
-              <%= movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br>
+        <div class="col-xs-3"><a href="<%= movie_path(movie) %>"><br><div class="movie_background"><img src="<%= movie.poster_image %>"class="img-responsive"></a></div><br>
+          <div class="behind movie_font">
+            <%= link_to movie.name, movie %><br><br>
+              See it in theaters on:<br>
+              <%= movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br><br>
+              See it in DVD on:<br>
+              <%= movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br><br>
               <%= link_to "Add this movie", user_movies_path(current_user, :movie_id => movie), :method => :post %><br>
               </div>
           </div>
