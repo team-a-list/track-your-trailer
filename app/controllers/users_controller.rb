@@ -1,22 +1,5 @@
 class UsersController < ApplicationController
 
-  # skip_before_action :login_required, :only => [:new, :create]
-
-  # def new
-  #   @user = User.new
-  # end
-
-  # def create
-  #   user = User.new(user_params)
-  #   if user.save
-  #     TwilioApi.welcome_text(user)
-  #     login(user.id)
-  #     redirect_to root_path
-  #   else
-  #     redirect_to :back
-  #   end
-  # end
-
   def index
     # if admin
     @users = User.all
@@ -30,8 +13,4 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone_number)
-  end
 end
