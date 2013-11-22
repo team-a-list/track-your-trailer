@@ -12,8 +12,9 @@ class User < ActiveRecord::Base
 
   # before_validation :normalize_phone
 
-  validates :email, :uniqueness => true
+  # validates :email, :uniqueness => true
   # validates_format_of :phone_number, :with => /\A\+\d{11}\z/
+    validates_uniqueness_of :email
 
   def self.users_for(notify_day = 0)
     movie_list = Movie.includes(:users).movies_released(notify_day)
