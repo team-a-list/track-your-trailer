@@ -1,4 +1,5 @@
 TrackYourTrailer::Application.routes.draw do
+  devise_for :users
   resources :movies
   get '/all_movies' => 'movies#all_movies'
 
