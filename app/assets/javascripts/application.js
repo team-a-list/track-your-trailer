@@ -25,7 +25,7 @@ $(document).ready(function(){
 
    $('.carousel').hover(
     function(){
-      $('.carousel-control').fadeIn(500),
+      $('.carousel-control').fadeIn(500)},
     function(){
       $('.carousel-control').fadeOut(300);
    });
