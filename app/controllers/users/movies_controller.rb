@@ -1,7 +1,7 @@
 class Users::MoviesController < ApplicationController
 
   def create
-    if params[:user_id].to_i == @current_user.id
+    if params[:user_id].to_i == current_user.id
       UserMovie.find_or_create_by(:user_id => params[:user_id], :movie_id => params[:movie_id])
       redirect_to user_path(params[:user_id])
     else

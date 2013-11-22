@@ -7,5 +7,5 @@ See it in DVD on:
 <% if movie.poster_image != "http://images.rottentomatoescdn.com/images/redesign/poster_default.gif" %>
   <img src="<%= movie.poster_image %>" class="movie"><br>
   <% end %>
-  <%= link_to "Add this movie", user_movies_path(@current_user, :movie_id => movie), :method => :post %><br><br>
+  <%= link_to "Add this movie", user_movies_path(current_user, :movie_id => movie), :method => :post %><br><br>
 <% end %>

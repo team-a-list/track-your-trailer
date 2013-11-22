@@ -14,7 +14,7 @@
               <%= @first_movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br>
               See it in DVD on:
               <%= @first_movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br>
-              <%= link_to "Add this movie", user_movies_path(@current_user, :movie_id => @first_movie), :method => :post %>
+              <%= link_to "Add this movie", user_movies_path(current_user, :movie_id => @first_movie), :method => :post %>
         </div>
       </div>
       <% @other_movies.each do |movie| %>
@@ -25,7 +25,7 @@
               <%= movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br>
               See it in DVD on:
               <%= movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br>
-              <%= link_to "Add this movie", user_movies_path(@current_user, :movie_id => movie), :method => :post %><br>
+              <%= link_to "Add this movie", user_movies_path(current_user, :movie_id => movie), :method => :post %><br>
         </div>
       </div>
       <% end %>

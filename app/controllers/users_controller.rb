@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  skip_before_action :login_required, :only => [:new, :create]
+  # skip_before_action :login_required, :only => [:new, :create]
 
   def new
     @user = User.new
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params[:id].to_i == @current_user.id
+    if params[:id].to_i == current_user.id
       @user = User.find(params[:id])
     else
       redirect_to root_path, :notice => "You aren't that user!"

@@ -1,20 +1,13 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :confirmable
   has_many :user_movies
   has_many :movies, :through => :user_movies
 
-  has_secure_password
-
   phony_normalize :phone_number, :default_country_code => "US"
 
-  # before_validation :normalize_phone
-
-  # validates :email, :uniqueness => true
-  # validates_format_of :phone_number, :with => /\A\+\d{11}\z/
-    validates_uniqueness_of :email
+  validates_uniqueness_of :email
 
   def self.users_for(notify_day = 0)
     movie_list = Movie.includes(:users).movies_released(notify_day)
@@ -31,9 +24,5 @@ class User < ActiveRecord::Base
   def text_notification(notify_day)
     self.movie_notifications(notify_day).collect(&:name).to_sentence[0..140]
   end
-
-  # def normalize_phone
-  #   self.phone_number = "+1" + read_attribute(:phone_number).gsub(/\D/,"")
-  # end
 
 end
