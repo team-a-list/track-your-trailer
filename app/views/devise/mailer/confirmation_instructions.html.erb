@@ -1,5 +1,6 @@
 <p>Welcome <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Congrats on joining thousands of users across the eastern seaboard in the world's premier movie release reminder service.<br><br>
+You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @token) %></p>
