@@ -14,6 +14,7 @@
 
 .img-responsive {
   height: 450px;
+  z-index: 1;
 }
 
 .movie {
@@ -23,3 +24,12 @@
 body {
   align: center;
 }
+
+.behind {
+  z-index:0;
+  display:block;
+  position:relative;
+  top:-300px;
+  padding:10px;
+}
+
