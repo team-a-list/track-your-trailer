@@ -11,7 +11,14 @@
  Logged in as:
 <%= link_to @current_user.name, @current_user %> |
 <%= link_to "Logout", logout_path %><br><br>
+<%= form_tag("/results", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %><br>
+  <%= submit_tag("Search") %><br>
 <% end %>
+<% end %>
+
+
 <%= yield %>
 
 <br><br><br><br>

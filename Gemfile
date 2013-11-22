@@ -64,6 +64,9 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Devise for authentication
+gem 'devise'
+
 group :test, :development do
   # Use sqlite3 as the database for Active Record
 
