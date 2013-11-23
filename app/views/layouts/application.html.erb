@@ -1,31 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TrackYourTrailer</title>
+  <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body align="center">
+
+<body class="home">
+    <!-- Color Bars (above header)-->
+    <div class="color-bar-1"></div>
+    <div class="color-bar-2 color-bg"></div>
+
+    <div class="container">
+
+      <div class="row header"><!-- Begin Header -->
+
+        <!-- Logo
+        ================================================== -->
+        <div class="span5 logo">
+            <a href="index.htm"><%= image_tag "wonder-logo.png" %><alt=""></a>
+        </div>
+
+        <!-- Main Navigation
+        ================================================== -->
+        <div class="span7 navigation">
+            <div class="navbar hidden-phone">
+
+            <ul class="nav">
+            <li class="dropdown active">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="index-1.htm">Home <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.htm">Full Page</a></li>
+                    <li><a href="index-gallery.htm">Gallery Only</a></li>
+                    <li><a href="index-slider.htm">Slider Only</a></li>
+                </ul>
+            </li>
+            <li><a href="features.htm">Features</a></li>
+            <li><a href="features.htm">Features</a></li>
+            <li><a href="features.htm">Features</a></li>
+            <li><a href="features.htm">Features</a></li>
+            </ul>
+
+            </div>
+
+            <!-- Mobile Nav
+            ================================================== -->
+            <form action="#" id="mobile-nav" class="visible-phone">
+                <div class="mobile-nav-select">
+                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                    <option value="">Navigate...</option>
+                    <option value="index.htm">Home</option>
+                        <option value="index.htm">- Full Page</option>
+                        <option value="index-gallery.htm">- Gallery Only</option>
+                        <option value="index-slider.htm">- Slider Only</option>
+                    <option value="features.htm">Features</option>
+                </select>
+                </div>
+                </form>
+
+        </div>
+
+      </div><!-- End Header -->
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-<% if current_user %>
- Logged in as:
-<%= link_to current_user.name, current_user %> |
-<%= link_to "Logout", logout_path %><br><br>
-<%= form_tag("/results", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %><br>
-  <%= submit_tag("Search") %><br>
-<% end %>
-<% end %>
-
 
 <%= yield %>
 
-<br><br><br><br>
-<%= link_to "Home", movies_path %><br><br>
-<br><br><br><br>
+    <!-- Footer Area
+        ================================================== -->
+
+    <div class="footer-container"><!-- Begin Footer -->
+        <div class="container">
+            <div class="row footer-row">
+                <div class="span3 footer-col">
+
+                   <%= image_tag "wonder-footer-logo.png"%>
+
+
+            <div class="row"><!-- Begin Sub Footer -->
+                <div class="span12 footer-col footer-sub">
+                    <div class="row no-margin">
+                        <div class="span6"><span class="left">Copyright 2012 Wonder Theme. All rights reserved.</span></div>
+                        <div class="span6">
+                            <span class="right">
+                            <a href="#">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Gallery</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Contact</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sub Footer -->
+
+        </div>
+    </div><!-- End Footer -->
+
+    <!-- Scroll to Top -->
+    <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
 
 </body>
 </html>

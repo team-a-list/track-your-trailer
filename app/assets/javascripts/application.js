@@ -9,38 +9,42 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 //= require jquery
 //= require jquery_ujs
+//= require ../../../vendor/assets/javascripts/bootstrap.js
+//= require ../../../vendor/assets/javascripts/jquery.easing.1.3.js
+//= require ../../../vendor/assets/javascripts/jquery.prettyPhoto.js
+//= require ../../../vendor/assets/javascripts/jquery.flexslider.js
+//= require ../../../vendor/assets/javascripts/jquery.custom.js
+//= require ../../../vendor/assets/javascripts/jquery.quicksand.js
 //= require twitter/bootstrap
 //= require_tree .
 
-$(document).ready(function(){
-   $('.carousel').carousel({
-     interval: 4000
-   });
+$(document).ready(function () {
 
-    $('.carousel-control').hide();
+    $("#btn-blog-next").click(function () {
+      $('#blogCarousel').carousel('next')
+    });
+     $("#btn-blog-prev").click(function () {
+      $('#blogCarousel').carousel('prev')
+    });
 
-   $('.carousel').hover(
-    function(){
-      $('.carousel-control').fadeIn(500)},
-    function(){
-      $('.carousel-control').fadeOut(300);
-   });
+     $("#btn-client-next").click(function () {
+      $('#clientCarousel').carousel('next')
+    });
+     $("#btn-client-prev").click(function () {
+      $('#clientCarousel').carousel('prev')
+    });
 
-  $('.behind').hide()
+});
 
-  $('.hover').hover(function(){
-    $(this).find('.img-responsive').fadeTo(200,0.2);
-    $(this).find('.behind').fadeTo(200,1);
-  },function(){
-    $(this).find('.img-responsive').fadeTo(200,1);
+ $(window).load(function(){
 
-    $(this).find('.behind').fadeTo(200,0);
-  }
-  );
-
-
- });
-
+    $('.flexslider').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+    });
+});

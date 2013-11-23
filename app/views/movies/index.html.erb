@@ -1,46 +1,35 @@
-<% if notice %>
-  <%= notice %><br><br>
-<% end %>
-
-<% Time::DATE_FORMATS[:nice_date] = "%B %d, %Y"%>
-
-<div class="col-md-6 col-md-offset-3">
-  <div class="carousel slide" id="myCarousel">
-    <div class="carousel-inner">
-      <div class="item active">
-        <div class="hover">
 
 
-<div class="col-xs-3"><a href="<%= movie_path(@first_movie) %>"><div class="movie_background"><img src="<%= @first_movie.poster_image %>" class="img-responsive"></div></a><br>
-          <div class="behind movie_font">
-                <%= link_to @first_movie.name, @first_movie %><br><br>
-                See it in theaters on:<br>
-                <%= @first_movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br><br>
-                See it in DVD on:<br>
-                <%= @first_movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br><br>
-                <%= link_to "Add this movie", user_movies_path(current_user, :movie_id => @first_movie), :method => :post %>
+
+<div class="container">
+<div class="row headline"><!-- Begin Headline -->
+
+        <div class="row headline"><!-- Begin Headline -->
+
+        <!-- Slider Carousel
+        ================================================== -->
+        <div class="span8">
+            <div class="flexslider">
+              <ul class="slides">
+                <li><a href="gallery-single.htm"><%= image_tag "slider1.jpg" %></a></li>
+                <li><a href="gallery-single.htm"><%= image_tag "slider2.jpg" %></li>
+                <li><a href="gallery-single.htm"><%= image_tag "slider3.jpg" %></a></li>
+              </ul>
             </div>
         </div>
-      </div>
-      </div>
-      <% @other_movies.each do |movie| %>
-      <div class="item">
-        <div class="hover">
-        <div class="col-xs-3"><a href="<%= movie_path(movie) %>"><br><div class="movie_background"><img src="<%= movie.poster_image %>"class="img-responsive"></a></div><br>
-          <div class="behind movie_font">
-            <%= link_to movie.name, movie %><br><br>
-              See it in theaters on:<br>
-              <%= movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br><br>
-              See it in DVD on:<br>
-              <%= movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br><br>
-              <%= link_to "Add this movie", user_movies_path(current_user, :movie_id => movie), :method => :post %><br>
-              </div>
-          </div>
+
+        <!-- Headline Text
+        ================================================== -->
+        <div class="span4">
+            <h3>This is Wonderful.</h3>
+            <p class="lead">18+ html pages crafted with love! Responsive Design. BUY ME!</p>
         </div>
-      </div>
-      <% end %>
+    </div><!-- End Headline -->
+
     </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i>‹</a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i>›</a>
-  </div>
 </div>
+</div>
+
+</div> <!-- End Container -->
+
+

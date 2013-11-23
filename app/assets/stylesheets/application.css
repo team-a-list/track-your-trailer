@@ -7,12 +7,17 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+ *= require ../../../vendor/assets/stylesheets/bootstrap-responsive.css
+ *= require ../../../vendor/assets/stylesheets/bootstrap.css
+ *= require ../../../vendor/assets/stylesheets/flexslider.css
+ *= require ../../../vendor/assets/stylesheets/prettyPhoto.css
+ *= require ../../../vendor/assets/stylesheets/style-ie.css
+ *= require ../../../vendor/assets/stylesheets/styles.css
  *= require_self
  *= require_tree .
  */
 
-.img-responsive {
+/*.img-responsive {
   height: 450px;
   z-index: 1;
 }
@@ -41,4 +46,9 @@ body {
 
 .movie_font {
   color: #EAEAEA;
+}*/
+
+.alert {
+  display: none;
 }
+
