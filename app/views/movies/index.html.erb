@@ -11,9 +11,9 @@
         <div class="span8">
             <div class="flexslider">
               <ul class="slides">
-                <li><a href="gallery-single.htm"><%= image_tag "slider1.jpg" %></a></li>
-                <li><a href="gallery-single.htm"><%= image_tag "slider2.jpg" %></li>
-                <li><a href="gallery-single.htm"><%= image_tag "slider3.jpg" %></a></li>
+                <%= @movies.each do |movie| %>
+                <li><a href="<%= movie_path(movie) %>"><img src="<%= movie.poster_image %>"></a></li>
+                <% end %>
               </ul>
             </div>
         </div>

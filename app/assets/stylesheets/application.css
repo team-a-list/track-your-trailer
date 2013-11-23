@@ -17,38 +17,7 @@
  *= require_tree .
  */
 
-/*.img-responsive {
-  height: 450px;
-  z-index: 1;
-}
+.flexslider {width: 300px; margin: 0 auto;}
 
-.movie {
-  height: 300px;
-}
-
-body {
-  align: left;
-}
-
-.behind {
-  z-index:0;
-  display:block;
-  position:relative;
-  top:-300px;
-  padding:10px;
-
-}
-
-.movie_background {
-  background: black;
-  display: inline-block;
-}
-
-.movie_font {
-  color: #EAEAEA;
-}*/
-
-.alert {
-  display: none;
-}
+.alert {display:none;}
 
