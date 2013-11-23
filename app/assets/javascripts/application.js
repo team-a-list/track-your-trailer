@@ -12,8 +12,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require ../../../vendor/assets/javascripts/bootstrap.js
-//= require ../../../vendor/assets/javascripts/jquery.easing.1.3.js
 //= require ../../../vendor/assets/javascripts/jquery.prettyPhoto.js
+//= require ../../../vendor/assets/javascripts/jquery.easing.1.3.js
 //= require ../../../vendor/assets/javascripts/jquery.flexslider.js
 //= require ../../../vendor/assets/javascripts/jquery.custom.js
 //= require ../../../vendor/assets/javascripts/jquery.quicksand.js
@@ -22,18 +22,11 @@
 
 $(document).ready(function () {
 
-    $("#btn-blog-next").click(function () {
-      $('#blogCarousel').carousel('next')
-    });
-     $("#btn-blog-prev").click(function () {
-      $('#blogCarousel').carousel('prev')
-    });
-
      $("#btn-client-next").click(function () {
-      $('#clientCarousel').carousel('next')
+      $('#clientCarousel').carousel('next');
     });
      $("#btn-client-prev").click(function () {
-      $('#clientCarousel').carousel('prev')
+      $('#clientCarousel').carousel('prev');
     });
 
 });
