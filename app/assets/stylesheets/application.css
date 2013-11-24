@@ -17,15 +17,15 @@
  *= require_tree .
  */
 
-.flexslider {width: 300px; margin: 0 auto;}
+.flexslider {width: 300px; height:450px; margin: 0 auto;}
 
 .alert {display:none;}
 
 .subheadline {line-height:28px; margin: 20px 0px 30px 0px; font-family: "Arvo"; font-weight:700; font-size:20px; color:#858988;}
 
-.span4.gallery-item {width: 300px; display: block;}
+.span4.gallery-item {width: 300px;  display: block;}
 .thumbnail-movie {width: 300px; height:450px;}
 .gallery-hover-3col.hidden-phone.hidden-tablet {width: 300px; height:450px;}
-/*.gallery-item { margin-bottom:5px; margin-top:5px; }*/
+
 
 

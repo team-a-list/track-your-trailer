@@ -1,3 +1,7 @@
+<div class="span4" style="text-align:justify; margin:0 auto;"></div>
+<div class="span4" style="text-align:justify; margin:0 auto;"></div>
+<div class="span4" style="text-align:justify; margin:0 auto;">
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -18,7 +22,11 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up", class: "btn" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %><br><br>
+</div>
+<div class="span4" style="text-align:justify; margin:0 auto;"></div>
+
+

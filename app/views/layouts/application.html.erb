@@ -23,7 +23,7 @@
         <!-- Logo
         ================================================== -->
         <div class="span6 logo">
-            <h1> TRACK YOUR TRAILER</h1>
+            <h1><a href="<%= root_path %>">TRACK YOUR TRAILER</a></h1>
             <!-- <a href="index.htm"><%#= image_tag "wonder-logo.png" %><alt=""></a> -->
         </div>
 
@@ -51,7 +51,7 @@
                 <li><%= link_to "All Movies", all_movies_path %></li>
 
                 <li><%= link_to "#{current_user.name}'s Movies", current_user %></li>
-
+                <li><%= link_to "My Info", edit_user_path(current_user) %></li>
                 <li><%= link_to "Logout", logout_path %></li>
 
             </ul>
@@ -96,11 +96,12 @@
             <div class="row"><!-- Begin Sub Footer -->
                 <div class="span12 footer-col footer-sub">
                     <div class="row no-margin">
-                        <div class="span6"><span class="left">Copyright 2012 Wonder Theme. All rights reserved.</span></div>
+                        <div class="span6"><span class="left">© 2013 The Flatiron School. Greg Eng, David Bella, Emily Xie</span></div>
                         <div class="span6">
                             <span class="right">
-                            <a href="#">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Gallery</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Contact</a>
+                            <%= link_to "Home", root_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "All Movies", all_movies_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "#{current_user.name}'s Movies", current_user %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "My Info", edit_user_path(current_user) %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "Logout", logout_path %>
                             </span>
+
                         </div>
                     </div>
                 </div>

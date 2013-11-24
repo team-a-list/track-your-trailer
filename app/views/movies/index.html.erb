@@ -13,7 +13,7 @@
             <div class="flexslider">
               <ul class="slides">
                 <%= @movies.each do |movie| %>
-                <li><a href="<%= movie_path(movie) %>"><img src="<%= movie.poster_image %>"></a></li>
+                <li><a href="<%= movie_path(movie) %>"><img src="<%= movie.poster_image %>" class="thumbnail-movie"></a></li>
                 <% end %>
               </ul>
             </div>
