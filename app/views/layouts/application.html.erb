@@ -50,7 +50,7 @@
 
                 <li><%= link_to "All Movies", all_movies_path %></li>
 
-                <li><%= link_to "#{current_user.name}'s Movies", current_user %></li>
+                <li><%= link_to "My Movies", current_user %></li>
                 <li><%= link_to "My Info", edit_user_path(current_user) %></li>
                 <li><%= link_to "Logout", logout_path %></li>
 
@@ -99,7 +99,7 @@
                         <div class="span6"><span class="left">© 2013 The Flatiron School. Greg Eng, David Bella, Emily Xie</span></div>
                         <div class="span6">
                             <span class="right">
-                            <%= link_to "Home", root_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "All Movies", all_movies_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "#{current_user.name}'s Movies", current_user %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "My Info", edit_user_path(current_user) %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "Logout", logout_path %>
+                            <%= link_to "Home", root_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "All Movies", all_movies_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "My Movies", current_user %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "My Info", edit_user_path(current_user) %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= link_to "Logout", logout_path %>
                             </span>
 
                         </div>
