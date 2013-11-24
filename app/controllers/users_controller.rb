@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def index
     # if admin
     @users = User.all
+    redirect_to root_path
   end
 
   def show
