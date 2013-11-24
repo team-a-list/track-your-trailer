@@ -22,7 +22,7 @@
 
                     <ul class="project-info">
                         <li><h6>Theatrical Release Date:</h6><%= @movie.release_date_theater.to_formatted_s(:nice_date) %></li>
-                        <li><h6>DVD Release Date:</h6><%= @movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %></li>
+                        <li><h6>DVD Release Date:</h6><%= @movie.release_date_dvd ? @movie.release_date_dvd : "Check back soon!" %></li>
                         <li><h6>Add this movie:</h6><%= link_to "Add this movie", user_movies_path(current_user, :movie_id => @movie), :method => :post %></li>
                     </ul>
                     <%= link_to "All Movies ", all_movies_path, class: "pull-right" %><br><%= link_to "Home", root_path, class: "pull-right" %>
