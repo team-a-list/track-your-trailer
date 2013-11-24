@@ -52,7 +52,7 @@
                 <li><%= link_to "All Movies", all_movies_path %></li>
 
                 <li><%= link_to "My Movies", current_user %></li>
-                <li><%= link_to "My Info", "users/edit" %></li>
+                <li><a href="users/edit">My Info</a></li>
                 <li><%= link_to "Logout", logout_path %></li>
 
             </ul>
@@ -102,7 +102,7 @@
                             <%= link_to "All Movies", all_movies_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                         <% if !current_user.nil? %>
                             <%= link_to "My Movies", current_user %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                            <%=  link_to "My Info", edit_user_path(current_user) %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <a href="users/edit">My Info</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                         <% end %>
                             <%= link_to "Logout", logout_path %>
                             </span>
