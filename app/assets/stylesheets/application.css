@@ -25,8 +25,10 @@
 
 .span4.gallery-item {width: 300px;  display: block;}
 .thumbnail-movie {width: 300px; height:450px;}
+.thumbnail-movie-show {width: 400x; height:600px;}
 .gallery-hover-3col.hidden-phone.hidden-tablet {width: 300px; height:450px;}
 .profile-movie {width: 300px; height:450px; align: right;}
+.showpagetext {line-height:28px; margin: 20px 0px 30px 0px; font-family: "Arvo"; font-weight:200; font-size:18px; color:#858988;}
 
 
 

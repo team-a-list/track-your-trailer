@@ -17,19 +17,19 @@
                 <div class="span1">
                 </div>
                 <div class="span4">
-                    <img src=<%= movie.poster_image %> class="profile-movie" alt="image">
+                    <a href="<%= movie_path(movie)%>"><img src=<%= movie.poster_image %> class="profile-movie" alt="image"></a>
                 </div>
                 <div class="span1">
                 </div>
                 <div class="span6">
                     <h3><%= movie.name %></h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac.</p>
-
-                    <ul class="project-info">
-                        <li><h6>Theatrical Release Date:</h6><%= movie.release_date_theater.to_formatted_s(:nice_date) %></li>
-                        <li><h6>DVD Release Date:</h6><%= movie.release_date_dvd ? movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></li>
+<!--                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac.</p>
+ -->
+                    <ul class="showpagetext project-info">
+                        <li>In Theaters:&nbsp;&nbsp;&nbsp;<%= movie.release_date_theater.to_formatted_s(:nice_date) %></h6></li>
+                        <li>On DVD:&nbsp;&nbsp;&nbsp;<%= movie.release_date_dvd ? movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></li>
                         <li>
-                            <%= link_to "Remove", user_movie_path(@user, movie), :method => :delete, data: { confirm: 'Are you sure?' } %></p>
+                            <%= link_to "Remove From My List", user_movie_path(@user, movie), :method => :delete, data: { confirm: 'Are you sure?' } %></p>
                         </li>
                     </ul>
                 </div>
