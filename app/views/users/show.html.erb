@@ -1,14 +1,45 @@
-<h3>User Name:</h3>
+<h2>Movies I Wanna See:</h2>
 
-<p><%= @user.name %></p>
-
-<h3>Movies You Wanna See:</h3>
-
-<% @user.movies.each do |movie| %>
-<p><%= link_to movie.name, movie %> | <%= link_to "Remove", user_movie_path(@user, movie), :method => :delete, data: { confirm: 'Are you sure?' } %></p>
+<p>
 
 
-<% end %>
 
+<!-- Page Content
+    ================================================== -->
+    <div class="row">
+
+        <!-- Gallery Items
+        ================================================== -->
+  <% @user.movies.each do |movie| %>
+        <div class="span12 gallery-single">
+
+            <div class="row">
+                <div class="span1">
+                </div>
+                <div class="span4">
+                    <a href="<%= movie_path(movie)%>"><img src=<%= movie.poster_image %> class="profile-movie" alt="image"></a>
+                </div>
+                <div class="span1">
+                </div>
+                <div class="span6">
+                    <h3><%= movie.name %></h3>
+<!--                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac.</p>
+ -->
+                    <ul class="showpagetext project-info">
+                        <li>In Theaters:&nbsp;&nbsp;&nbsp;<%= movie.release_date_theater.to_formatted_s(:nice_date) %></h6></li>
+                        <li>On DVD:&nbsp;&nbsp;&nbsp;<%= movie.release_date_dvd ? movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></li>
+                        <li>
+                            <%= link_to "Remove From My List", user_movie_path(@user, movie), :method => :delete, data: { confirm: 'Are you sure?' } %></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div><!-- End gallery-single-->
+        <% end %>
+
+    </div><!-- End container row -->
+
+    </div> <!-- End Container -->
 
 

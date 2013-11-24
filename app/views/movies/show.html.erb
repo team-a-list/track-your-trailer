@@ -1,14 +1,36 @@
-<% if notice %>
-  <%= notice %><br><br>
-<% end %>
-
-<h3><%= @movie.name %></h3><br>
-See it in theaters on:
-<%= @movie.release_date_theater.to_formatted_s(:nice_date) %><br>
-See it on DVD on:
-<%= @movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br><br>
-
-<img src="<%= @movie.poster_image %>" class="movie"><br>
-
 <!-- TODO - update the user id in this path -->
-<%= link_to "Add this movie", user_movies_path(current_user, :movie_id => @movie), :method => :post %>
+
+
+
+
+
+<!-- Page Content
+    ================================================== -->
+    <div class="row">
+
+        <!-- Gallery Items
+        ================================================== -->
+        <div class="span12 gallery-single">
+
+            <div class="row">
+                <div class="span6">
+                    <img src=<%= @movie.poster_image %> class="thumbnail-movie-show" alt="image">
+                </div>
+                <div class="span6">
+                    <h2><%= @movie.name %></h2>
+
+                   <ul class="showpagetext project-info">
+                        <li>In Theaters:&nbsp;&nbsp;&nbsp;<%= @movie.release_date_theater.to_formatted_s(:nice_date) %></h6></li>
+                        <li>On DVD:&nbsp;&nbsp;&nbsp;<%= @movie.release_date_dvd ? @movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></li>
+                        <li>
+                            <%= link_to "Add This Movie", user_movies_path(current_user, :movie_id => @movie), :method => :post %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div><!-- End gallery-single-->
+
+    </div><!-- End container row -->
+
+    </div> <!-- End Container -->

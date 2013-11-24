@@ -1,11 +1,31 @@
-<% @movies.each do |movie| %>
-  <%= link_to movie.name, movie %><br>
-See it in theaters on:
-<%= movie.release_date_theater.try(:to_formatted_s, :nice_date) %><br>
-See it in DVD on:
-<%= movie.release_date_dvd.try(:to_formatted_s, :nice_date) if !nil? %><br>
-<% if movie.poster_image != "http://images.rottentomatoescdn.com/images/redesign/poster_default.gif" %>
-  <img src="<%= movie.poster_image %>" class="movie"><br>
-  <% end %>
-  <%= link_to "Add this movie", user_movies_path(current_user, :movie_id => movie), :method => :post %><br><br>
-<% end %>
+ <div class="row">
+
+        <!-- Gallery Items
+        ================================================== -->
+        <div class="span12 gallery">
+
+            <div class="row clearfix">
+                <ul class="gallery-post-grid holder">
+
+                    <!-- Gallery Item 1 -->
+                <% @movies.each do |movie| %>
+                    <li  class="span4 gallery-item" data-id="id-1" data-type="tag1">
+                        <span class="gallery-hover-3col hidden-phone hidden-tablet">
+                            <span class="gallery-icons">
+                                <%= link_to "", user_movies_path(current_user, :movie_id => movie), :method => :post, class: "item-details-link" %>
+                            </span>
+                        </span>
+                        <a href="gallery-single.htm"><img src="<%= movie.poster_image %>" class="thumbnail-movie" alt="Gallery"></a>
+                        <span class="project-details"><a href="<%= movie_path(movie) %>"><%= movie.name %></a><br>Theaters: <%= movie.release_date_theater ? movie.release_date_theater.to_formatted_s(:nice_date) : "Check back soon!" %><br>DVD: <%= movie.release_date_dvd ? movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></span>
+                    </li>
+                <% end %>
+
+                </ul>
+            </div>
+
+
+        </div><!-- End gallery list-->
+
+    </div><!-- End container row -->
+
+    </div> <!-- End Container -->

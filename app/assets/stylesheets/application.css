@@ -7,38 +7,28 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+ *= require ../../../vendor/assets/stylesheets/bootstrap-responsive.css
+ *= require ../../../vendor/assets/stylesheets/bootstrap.css
+ *= require ../../../vendor/assets/stylesheets/flexslider.css
+ *= require ../../../vendor/assets/stylesheets/prettyPhoto.css
+ *= require ../../../vendor/assets/stylesheets/style-ie.css
+ *= require ../../../vendor/assets/stylesheets/styles.css
  *= require_self
  *= require_tree .
  */
 
-.img-responsive {
-  height: 450px;
-  z-index: 1;
-}
+.flexslider {width: 300px; height:450px; margin: 0 auto;}
 
-.movie {
-  height: 300px;
-}
+.alert {display:none;}
 
-body {
-  align: left;
-}
+.subheadline {line-height:28px; margin: 20px 0px 30px 0px; font-family: "Arvo"; font-weight:700; font-size:20px; color:#858988;}
 
-.behind {
-  z-index:0;
-  display:block;
-  position:relative;
-  top:-300px;
-  padding:10px;
+.span4.gallery-item {width: 300px;  display: block;}
+.thumbnail-movie {width: 300px; height:450px;}
+.thumbnail-movie-show {width: 400x; height:600px;}
+.gallery-hover-3col.hidden-phone.hidden-tablet {width: 300px; height:450px;}
+.profile-movie {width: 300px; height:450px; align: right;}
+.showpagetext {line-height:28px; margin: 20px 0px 30px 0px; font-family: "Arvo"; font-weight:200; font-size:18px; color:#858988;}
 
-}
 
-.movie_background {
-  background: black;
-  display: inline-block;
-}
 
-.movie_font {
-  color: #EAEAEA;
-}
