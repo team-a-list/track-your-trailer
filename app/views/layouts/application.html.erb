@@ -95,9 +95,9 @@
             <div class="row"><!-- Begin Sub Footer -->
                 <div class="span12 footer-col footer-sub">
                     <div class="row no-margin">
-                        <div class="span6"><span class="left">© 2013 The Flatiron School. Greg Eng, David Bella, Emily Xie</span></div>
-                        <div class="span6">
-                            <span class="right">
+                        <div class="span6 hidden-phone hidden-tablet"><span class="left">© 2013 The Flatiron School. Greg Eng, David Bella, Emily Xie</span></div>
+                        <div class="span6 hidden-phone hidden-tablet">
+                            <span class="right ">
                             <%= link_to "Home", root_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                             <%= link_to "All Movies", all_movies_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                         <% if !current_user.nil? %>
@@ -106,7 +106,6 @@
                         <% end %>
                             <%= link_to "Logout", logout_path %>
                             </span>
-
                         </div>
                     </div>
                 </div>
