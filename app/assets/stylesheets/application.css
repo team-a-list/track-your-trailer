@@ -83,6 +83,11 @@
   margin-left: 15%;
 }
 
+.span12 h2 {
+  margin: 0 auto;
+  margin-left: 15%;
+}
+
 @media only screen and (max-width: 760px) {
   .container, .row {
     width: 90%;
@@ -138,5 +143,12 @@
     width: 300px;
     margin: 0;
   }
+
+.span12 h2 {
+  margin-left: 1%;
+  white-space: normal;
+  word-wrap: normal;
+  word-break: normal;
+}
 }
 
