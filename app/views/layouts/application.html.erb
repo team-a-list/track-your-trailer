@@ -23,18 +23,21 @@
 
         <!-- Logo
         ================================================== -->
-        <div class="span6 logo">
+        <div class="span6 logo hidden-phone">
             <h1><a href="<%= root_path %>">TRACK YOUR TRAILER</a></h1>
             <!-- <a href="index.htm"><%#= image_tag "wonder-logo.png" %><alt=""></a> -->
         </div>
 
-
+        <div class="span12 visible-phone">
+            <h6><a href="<%= root_path %>">TRACK YOUR TRAILER</a></h6>
+            <!-- <a href="index.htm"><%#= image_tag "wonder-logo.png" %><alt=""></a> -->
+        </div>
 
         <!-- Main Navigation
         ================================================== -->
 
     <% if current_user %>
-        <div class="span6 navigation">
+        <div class="span6 navigation ">
 
             <div align="right">
             <%= form_tag("/results", method: "get", class: "form-search") do %>
@@ -66,10 +69,12 @@
                 <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
                     <option value="">Navigate...</option>
                     <option value="<%= root_path %>">Home</option>
-                        <option value="index.htm">- Full Page</option>
-                        <option value="index-gallery.htm">- Gallery Only</option>
-                        <option value="index-slider.htm">- Slider Only</option>
-                    <option value="features.htm">Features</option>
+                        <option value="<%= all_movies_path %>">- All Movies</option>
+                        <% if current_user %>
+                        <option value="<%= current_user %>">- My Movies</option>
+                        <option value="users/edit">- My Info</option>
+                        <% end %>
+                    <option value="<%= current_user %>">Logout</option>
                 </select>
                 </div>
                 </form>
@@ -81,7 +86,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<%= yield %>
+<%#= yield %>
 
     <!-- Footer Area
         ================================================== -->
