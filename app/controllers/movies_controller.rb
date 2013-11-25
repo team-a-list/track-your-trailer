@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
   end
 
   def all_movies
-    @movies = Movie.all.where.not(poster_image: "http://images.rottentomatoescdn.com/images/redesign/poster_default.gif")
+    @movies = Movie.all.where.not(poster_image: "http://images.rottentomatoescdn.com/images/redesign/poster_default.gif").where("release_date_theater > ? or release_date_dvd > ?", Time.now, Time.now)
   end
 
   def show
