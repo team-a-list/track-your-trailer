@@ -25,8 +25,8 @@ namespace :notify do
   end
 
   task :all, [:days] => :environment do |t, args|
-    Rake::Task["notify:email"].execute(args)
     Rake::Task["notify:text"].execute(args)
+    Rake::Task["notify:email"].execute(args)
   end
 
 end

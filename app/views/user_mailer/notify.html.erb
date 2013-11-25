@@ -1,9 +1,9 @@
-Hey <%= @user.name %><br>,
+Hey <%= @user.name %>,<br><br>
 
-Remember this movie you wanted to see?
-Watch it Today:<br><br
+Remember this movie you wanted to see?<br>
+Watch it Today:<br><br>
 
 <% @user.movie_notifications(@notify_day).each do |movie| %>
-  <%= movie.name %><br>
-  <img src="<%= movie.poster_image %>" height="500px"> <br>
+  <h3><%= movie.name %></h3>
+  <img src="<%= movie.poster_image %>" height="450px"> <br>
 <% end %>
