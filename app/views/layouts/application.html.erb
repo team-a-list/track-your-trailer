@@ -66,13 +66,15 @@
                 <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
                     <option value="">Navigate...</option>
                     <option value="<%= root_path %>">Home</option>
-                        <option value="index.htm">- Full Page</option>
-                        <option value="index-gallery.htm">- Gallery Only</option>
-                        <option value="index-slider.htm">- Slider Only</option>
-                    <option value="features.htm">Features</option>
+                        <option value="<%= all_movies_path %>">- All Movies</option>
+                        <% if current_user %>
+                        <option value="<%= user_path(current_user) %>">- My Movies</option>
+                        <option value="users/edit">- My Info</option>
+                        <% end %>
+                    <option value="<%= logout_path(current_user) %>">Logout</option>
                 </select>
                 </div>
-                </form>
+            </form>
 
         </div>
 
