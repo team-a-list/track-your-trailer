@@ -1,6 +1,7 @@
-<%= @user.name %><br>
-<%= @user.email %><br>
-THIS MOVIE IS RELEASED TODAY:<br>
+Hey <%= @user.name %><br>,
+
+Remember this movie you wanted to see?
+Watch it Today:<br><br
 
 <% @user.movie_notifications(@notify_day).each do |movie| %>
   <%= movie.name %><br>

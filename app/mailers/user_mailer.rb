@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
   def notify(user, notify_day)
     @user = user
     @notify_day = notify_day
-    mail(to: @user.email, subject: "Remember this movie you wanted to see?")
+    mail(to: @user.email, subject: "TrackYourTrailer - It's finally out!")
   end
 
 end
