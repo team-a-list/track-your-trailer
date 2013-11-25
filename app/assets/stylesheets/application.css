@@ -41,6 +41,7 @@
 .span4.gallery-item {
   width: 300px;
   display: block;
+  position: relative;
 }
 
 .thumbnail-movie {
@@ -56,6 +57,7 @@
 .gallery-hover-3col.hidden-phone.hidden-tablet {
   width: 300px;
   height:450px;
+  left: 0;
 }
 
 .profile-movie {
@@ -88,9 +90,25 @@
   margin-left: 15%;
 }
 
+li.span4 .project-details {
+  width: auto;
+}
+
+.row h5 {
+  text-align: left;
+  /*padding-left: 15px;*/
+  width: 100%;
+}
+
 @media only screen and (max-width: 760px) {
   .container, .row {
     width: 90%;
+  }
+
+  .row {
+    margin: 0 0 0 -14px;
+    /*margin: 0 auto;*/
+    /*width: 95%;*/
   }
 
   .row.header {
@@ -177,3 +195,9 @@
 
 }
 
+@media only screen and (max-width: 450px) {
+  h5.title-bg {
+      width: 318px;
+  }
+
+}
