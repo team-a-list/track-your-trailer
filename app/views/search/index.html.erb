@@ -7,6 +7,9 @@
                 <ul class="gallery-post-grid holder">
 
                     <!-- Gallery Item 1 -->
+            <% if @results.empty? %>
+                <div class="span6"><h5>Sorry, there were no movies matching your search.</h5></div>
+            <% else %>
                 <% @results.each do |movie| %>
                     <li  class="span4 gallery-item" data-id="id-1" data-type="tag1">
                         <span class="gallery-hover-3col hidden-phone hidden-tablet">
@@ -18,6 +21,7 @@
                         <span class="project-details"><a href="<%= movie_path(movie) %>"><%= movie.name %></a><br>Theaters: <%= movie.release_date_theater ? movie.release_date_theater.to_formatted_s(:nice_date) : "Check back soon!" %><br>DVD: <%= movie.release_date_dvd ? movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></span>
                     </li>
                 <% end %>
+            <% end %>
 
                 </ul>
             </div>
