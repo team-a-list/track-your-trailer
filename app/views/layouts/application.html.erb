@@ -52,7 +52,7 @@
                 <li><%= link_to "All Movies", all_movies_path %></li>
 
                 <li><%= link_to "My Movies", current_user %></li>
-                <li><a href="users/edit">My Info</a></li>
+                <li><a href="<%= edit_user_registration_path %>">My Info</a></li>
                 <li><%= link_to "Logout", logout_path %></li>
 
             </ul>
@@ -69,7 +69,7 @@
                         <option value="<%= all_movies_path %>">- All Movies</option>
                         <% if current_user %>
                         <option value="<%= user_path(current_user) %>">- My Movies</option>
-                        <option value="users/edit">- My Info</option>
+                        <option value="<%= edit_user_registration_path %>">- My Info</option>
                         <% end %>
                     <option value="<%= logout_path(current_user) %>">Logout</option>
                 </select>
@@ -104,7 +104,7 @@
                             <%= link_to "All Movies", all_movies_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                         <% if !current_user.nil? %>
                             <%= link_to "My Movies", current_user %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                            <a href="users/edit">My Info</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <a href="<%= edit_user_registration_path %>">My Info</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                         <% end %>
                             <%= link_to "Logout", logout_path %>
                             </span>
