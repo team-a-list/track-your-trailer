@@ -47,4 +47,11 @@ class RottenTomatoesApi
     end
   end
 
+  def self.update_all_movies
+    Movie.all.each do |movie|
+      movie_hash = self.get_movie(movie.rotten_tomatoes_uri)
+      movie.update_from_rotten(movie_hash)
+    end
+  end
+
 end
