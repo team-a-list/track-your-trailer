@@ -73,6 +73,16 @@
   color:#858988;
 }
 
+.span12.gallery {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.span12.gallery-single {
+  margin: 0 auto;
+  margin-left: 15%;
+}
+
 @media only screen and (max-width: 760px) {
   .container, .row {
     width: 90%;
@@ -112,8 +122,21 @@
     }
     .footer-col .span6 { width: 100%; }
 
+    h5.title-bg {
+      width: 50%;
+    }
 
+    .row.gallery-row {
+      width: 90%;
+    }
 
+}
 
+@media only screen and (max-width: 640px) {
+  .gallery {
+    text-align: center;
+    width: 300px;
+    margin: 0;
+  }
 }
 
