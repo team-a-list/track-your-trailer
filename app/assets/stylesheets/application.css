@@ -144,11 +144,36 @@
     margin: 0;
   }
 
-.span12 h2 {
-  margin-left: 1%;
-  white-space: normal;
-  word-wrap: normal;
-  word-break: normal;
-}
+  .gallery {
+    text-align: center;
+    width: 300px;
+    margin: 0;
+  }
+
+  .thumbnail-movie-show {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  .showpagetext.project-info {
+    width: 90%;
+  }
+
+  .span12 h2 {
+    margin-left: 1%;
+    white-space: normal;
+    word-wrap: normal;
+    word-break: normal;
+  }
+
+  .span12.gallery-single{
+    width: 100% !important;
+  }
+
+  .row .span6 {
+    width: 90%;
+  }
+
 }
 
