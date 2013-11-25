@@ -38,7 +38,7 @@
 
             <div class="navbar">
 
-                <ul class="nav">
+                <ul class="nav hidden-phone">
                     <li><%= link_to "All Movies", all_movies_path %></li>
                     <li><%= link_to "My Movies", current_user %></li>
                     <li><a href="<%= edit_user_registration_path %>">My Info</a></li>
@@ -46,6 +46,21 @@
                 </ul>
 
             </div><!-- .navbar .hidden-phone -->
+
+                <form action="#" id="mobile-nav" class="visible-phone">
+                <div class="mobile-nav-select">
+                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                    <option value="">Navigate...</option>
+                    <option value="<%= root_path %>">Home</option>
+                        <option value="<%= all_movies_path %>">- All Movies</option>
+                        <% if current_user %>
+                        <option value="<%= current_user %>">- My Movies</option>
+                        <option value="users/edit">- My Info</option>
+                        <% end %>
+                    <option value="<%= current_user %>">Logout</option>
+                </select>
+                </div>
+                </form>
 
             <div>
             <%= form_tag("/results", method: "get", class: "form-search") do %>
@@ -59,7 +74,7 @@
         </div><!-- .span6 .navigation -->
     <% end %>
             <!-- Mobile Nav was here -->
-           
+
         </div>
 
       </div><!-- End Header -->
