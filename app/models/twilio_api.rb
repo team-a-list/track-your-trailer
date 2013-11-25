@@ -18,4 +18,13 @@ class TwilioApi
     puts message.sid
   end
 
+  def self.send_verification(user)
+    message = @CLIENT.account.sms.messages.create(
+      :body => "Verify your TYT account at http://#{Rails.application.config.url}/v/#{user.text_token}",
+      :to => user.phone_number,
+      :from => NUMBER
+    )
+    puts message.sid
+  end
+
 end

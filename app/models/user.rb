@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
+  after_create :send_text_verification
+
   def self.users_for(notify_day = 0)
     movie_list = Movie.includes(:users).movies_released(notify_day)
     movie_list.map{|movie| movie.users}.flatten.uniq
@@ -23,6 +25,13 @@ class User < ActiveRecord::Base
 
   def text_notification(notify_day)
     self.movie_notifications(notify_day).collect(&:name).to_sentence[0..140]
+  end
+
+  def send_text_verification
+    self.text_token = Random.rand(8999) + 1000
+    self.save
+
+    TwilioApi.send_verification(self)
   end
 
 end

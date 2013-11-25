@@ -91,4 +91,6 @@ TrackYourTrailer::Application.configure do
     authentication:       'plain',
     enable_starttls_auto: true
   }
+
+  config.url = 'trackyourtrailer.herokuapp.com'
 end

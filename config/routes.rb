@@ -14,6 +14,8 @@ TrackYourTrailer::Application.routes.draw do
   get '/results' => 'search#index', :as => 'results'
   get '/search' => 'search#new', :as => 'search'
 
+  get '/v/:text_token' => 'users#verify_text'
+
   # devise_for :users, :controllers => { :registrations => "registrations" }
 
   # post '/search' => 'search#create'
