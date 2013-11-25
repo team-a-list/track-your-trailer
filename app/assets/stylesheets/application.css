@@ -87,7 +87,6 @@
 
 .span12 h2 {
   margin: 0 auto;
-  margin-left: 15%;
 }
 
 li.span4 .project-details {
@@ -162,12 +161,6 @@ li.span4 .project-details {
     margin: 0;
   }
 
-  .gallery {
-    text-align: center;
-    width: 300px;
-    margin: 0;
-  }
-
   .thumbnail-movie-show {
     width: 100%;
     height: auto;
@@ -197,7 +190,34 @@ li.span4 .project-details {
 
 @media only screen and (max-width: 450px) {
   h5.title-bg {
-      width: 318px;
+    width: 275px;
+    margin: 0 0 0 0;
+  }
+
+  .flexslider {
+  width: 300px;
+  height:450px;
+  margin-left: -25px;
+  }
+
+  .subheadline {
+  line-height:16px;
+  margin: 0 auto;
+  font-family: "Arvo";
+  font-weight:400;
+  font-size:16px;
+  color:#858988;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  }
+
+  .container {
+    width:320px;
+  }
+
+  .span12 h2 {
+  font-weight:400;
+  font-size:24px;
   }
 
 }
