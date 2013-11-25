@@ -17,6 +17,8 @@
  *= require_tree .
  */
 
+
+
 .flexslider {
   width: 300px; 
   height:450px; 
@@ -71,5 +73,47 @@
   color:#858988;
 }
 
+@media only screen and (max-width: 960px) {
+  .container, .row {
+    width: 90%;
+  }
 
+  .row.header {
+    margin-right: 0 !important;
+    width: 100%;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .navigation {
+    text-align: center;
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+
+    .navbar {
+
+    }
+
+  .footer-col {
+    overflow: visible;
+    width: 90% !important;
+  }
+
+    .footer-col .left,  .footer-col .span6 {
+      white-space: normal;
+      word-wrap: normal;
+      word-break: normal;
+    }
+    .footer-col .span6 { width: 100%; }
+
+
+
+
+}
 

@@ -66,12 +66,13 @@ blockquote.pull-right {border-right: 5px solid #999;}
 / Header
 **************************************/
 .logo { margin-top:40px; }
+.logo h1 { margin-top: 0;}
 .logo img { padding-right:20px; }
 .logo h5 { display: inline-block; }
 .headline { margin-bottom:20px; }
 
 
-.navigation { margin-top:40px; }
+.navigation { margin-top:40px; text-align: right;}
 .navigation .navbar {
 	float:right; background:#383838;
 	border-bottom: 1px dotted #a9a9a9;
