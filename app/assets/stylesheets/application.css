@@ -17,7 +17,9 @@
  *= require_tree .
  */
 
-
+ .row {
+  margin-bottom: 10px;
+ }
 
 .flexslider {
   width: 300px;
@@ -76,7 +78,7 @@
 }
 
 .span12.gallery {
-  margin: 0 auto;
+  margin: 0px 45px 0px;
   text-align: center;
 }
 
@@ -219,5 +221,10 @@ li.span4 .project-details {
   font-weight:400;
   font-size:24px;
   }
+
+  .span12.gallery {
+  margin: 0px 10px 0px;
+  text-align: center;
+}
 
 }
