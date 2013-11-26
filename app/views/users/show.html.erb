@@ -1,4 +1,4 @@
-<div class="span12"><h2>Movies I Wanna See:</h2><br><br></div>
+<div class="span12"><h2>My Movies:</h2><br><br></div>
 
 
 
@@ -10,8 +10,7 @@
         <!-- Gallery Items
         ================================================== -->
   <% @user.movies.each do |movie| %>
-        <div class="span12 gallery-single">
-
+        <div class="span12 gallery-single"><br>
             <div class="row">
                 <div class="span0">
                 </div>
@@ -34,6 +33,7 @@
                 </div>
             </div>
         </div><!-- End gallery-single-->
+            <ul class="showpagetext project-info"><li> -</li><ul>
         <% end %>
 
     </div><!-- End container row -->
