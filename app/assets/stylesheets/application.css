@@ -17,7 +17,9 @@
  *= require_tree .
  */
 
-
+.navbar .nav > li > a:hover {
+  color: #EF4F1D;
+}
 
 .flexslider {
   width: 300px;
