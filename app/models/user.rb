@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
 
   after_create :send_text_verification
 
+  # before_save :save_phone_number
+  # after_save :verify_phone_number
+
   def self.users_for(notify_day = 0)
     movie_list = Movie.includes(:users).movies_released(notify_day)
     movie_list.map{|movie| movie.users}.flatten.uniq
@@ -28,6 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def send_text_verification
+    #if this column was updated
     self.text_token = Random.rand(8999) + 1000
     self.save
     begin
@@ -35,5 +39,17 @@ class User < ActiveRecord::Base
     rescue 
     end 
   end
+
+  # def save_phone_number
+  #   @saved_number = self.phone_number
+  # end
+
+  # def verify_phone_number
+  #   @new_number = self.phone_number
+  #   if @saved_number != @new_number
+  #     self.phone_verified = false
+  #     send_text_verification
+  #   end
+  # end
 
 end
