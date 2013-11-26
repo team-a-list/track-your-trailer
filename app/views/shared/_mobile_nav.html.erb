@@ -1,4 +1,4 @@
-        <!-- Mobile Nav
+<!-- Mobile Nav
     ================================================== -->
     <form action="#" id="mobile-nav" class="visible-phone">
         <div class="mobile-nav-select">
@@ -7,10 +7,12 @@
             <option value="<%= root_path %>">Home</option>
                 <option value="<%= all_movies_path %>">- All Movies</option>
                 <% if current_user %>
-                <option value="<%= user_path(current_user) %>">- My Movies</option>
-                <option value="<%= edit_user_registration_path %>">- My Info</option>
+                    <option value="<%= user_path(current_user) %>">- My Movies</option>
+                    <option value="<%= edit_user_registration_path %>">- My Info</option>
+                    <option value="<%= current_user %>">Logout</option>
+                <% else %>
+                    <option value="<%= login_path %>">Login</option>
                 <% end %>
-            <option value="<%= current_user %>">Logout</option>
         </select>
         </div>
     </form>
