@@ -1,0 +1,14 @@
+<!-- Main Navigation
+================================================== -->
+    <div class="span6 navigation">
+
+        <div class="navbar">
+
+            <ul class="nav hidden-phone">
+                <li><%= link_to "All Movies", all_movies_path %></li>
+                <li><%= link_to "My Movies", current_user %></li>
+                <li><a href="<%= edit_user_registration_path %>">My Info</a></li>
+                <li><%= link_to "Logout", logout_path %></li>
+            </ul>
+
+        </div><!-- .navbar .hidden-phone -->
