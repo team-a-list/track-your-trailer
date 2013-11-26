@@ -47,34 +47,7 @@
 
                     </div><!-- .navbar .hidden-phone -->
 
-                    <form action="#" id="mobile-nav" class="visible-phone">
-                        <div class="mobile-nav-select">
-                            <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
-                                <option value="">Navigate...</option>
-                                <option value="<%= root_path %>">Home</option>
-                                    <option value="<%= all_movies_path %>">- All Movies</option>
-                                    <% if current_user %>
-                                    <option value="<%= current_user %>">- My Movies</option>
-                                    <option value="users/edit">- My Info</option>
-                                    <% end %>
-                                <option value="<%= current_user %>">Logout</option>
-                            </select>
-                        </div>
-                    </form>
-
-
-                <div>
-                    <%= form_tag("/results", method: "get", class: "form-search") do %>
-                        <div class="input-append">
-                            <%= text_field_tag(:q, nil, class: "span3 search-query") %>
-                            <%= submit_tag("Search", class: "btn") %>
-                        </div>
-                     <% end %>
-                </div>
-
-            </div>
-    <% end %>
-            <!-- Mobile Nav
+                <!-- Mobile Nav
             ================================================== -->
                 <form action="#" id="mobile-nav" class="visible-phone">
                 <div class="mobile-nav-select">
@@ -90,6 +63,20 @@
                 </select>
                 </div>
                 </form>
+
+
+                <div>
+                    <%= form_tag("/results", method: "get", class: "form-search") do %>
+                        <div class="input-append">
+                            <%= text_field_tag(:q, nil, class: "span3 search-query") %>
+                            <%= submit_tag("Search", class: "btn") %>
+                        </div>
+                     <% end %>
+                </div>
+
+            </div>
+    <% end %>
+
 
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
