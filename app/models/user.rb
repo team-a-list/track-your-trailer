@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
-  after_create :send_text_verification
+  before_create :send_text_verification
 
-  # before_save :save_phone_number
+  # before_update :save_phone_number
   # after_save :verify_phone_number
 
   def self.users_for(notify_day = 0)
@@ -31,13 +31,11 @@ class User < ActiveRecord::Base
   end
 
   def send_text_verification
-    #if this column was updated
     self.text_token = Random.rand(8999) + 1000
-    self.save
     begin
     TwilioApi.send_verification(self)
-    rescue 
-    end 
+    rescue
+    end
   end
 
   # def save_phone_number
@@ -46,9 +44,10 @@ class User < ActiveRecord::Base
 
   # def verify_phone_number
   #   @new_number = self.phone_number
+  #   # raise
   #   if @saved_number != @new_number
   #     self.phone_verified = false
-  #     send_text_verification
+  #     self.send_text_verification
   #   end
   # end
 
