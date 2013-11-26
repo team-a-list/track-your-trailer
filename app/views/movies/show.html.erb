@@ -23,7 +23,11 @@
                         <li>In Theaters:&nbsp;&nbsp;&nbsp;<%= @movie.release_date_theater.to_formatted_s(:nice_date) %></h6></li>
                         <li>On DVD:&nbsp;&nbsp;&nbsp;<%= @movie.release_date_dvd ? @movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></li>
                         <li>
-                            <%= link_to "Add This Movie", user_movies_path(current_user, :movie_id => @movie), :method => :post %>
+                            <% if current_user %>
+                                <%= link_to "Add This Movie", user_movies_path(current_user, :movie_id => @movie), :method => :post %>
+                            <% else %>
+                                <%= link_to "Sign Up to Track Movies", new_user_registration_path %>
+                            <% end %>
                         </li>
                     </ul>
                 </div>
