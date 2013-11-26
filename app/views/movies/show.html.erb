@@ -21,7 +21,11 @@
 
                    <ul class="showpagetext project-info">
                         <li>In Theaters:&nbsp;&nbsp;&nbsp;<%= @movie.release_date_theater.to_formatted_s(:nice_date) %></h6></li>
-                        <li>On DVD:&nbsp;&nbsp;&nbsp;<%= @movie.release_date_dvd ? @movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></li>
+                        <li>On DVD:&nbsp;&nbsp;&nbsp;<%= @movie.release_date_dvd ? @movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %>
+                        </li>
+                        <li>More Info:&nbsp;&nbsp; <%= link_to "Rotten Tomatoes", @movie.rotten_tomatoes_link, target: "blank", style: "color: #666; text-decoration:underline;"%>
+                        </li>
+
                         <li>
                             <% if current_user %>
                                 <%= link_to "Add This Movie", user_movies_path(current_user, :movie_id => @movie), :method => :post %>
