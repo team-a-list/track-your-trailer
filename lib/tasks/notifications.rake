@@ -20,7 +20,9 @@ namespace :notify do
   task :text, [:days] => :environment do |t, args|
     users_to_notify = User.users_for(days_ahead(args))
     users_to_notify.each do |user|
-      TwilioApi.notify(user, days_ahead(args))
+      if user.phone_verified
+        TwilioApi.notify(user, days_ahead(args))
+      end
     end
   end
 

@@ -30,8 +30,10 @@ class User < ActiveRecord::Base
   def send_text_verification
     self.text_token = Random.rand(8999) + 1000
     self.save
-
+    begin
     TwilioApi.send_verification(self)
+    rescue 
+    end 
   end
 
 end
