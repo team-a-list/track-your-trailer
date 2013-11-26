@@ -1,3 +1,4 @@
+
 class RottenTomatoesApi
 
   def self.search(search_string)
