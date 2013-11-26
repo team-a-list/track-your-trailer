@@ -36,6 +36,11 @@ $(document).ready(function () {
     $('.flexslider').flexslider({
         animation: "slide",
         slideshow: true,
+        itemWidth: 300,
+        itemMargin: 20,
+        minItems: 1,
+        maxItems: 3,
+        move: 1,
         start: function(slider){
           $('body').removeClass('loading');
         }
