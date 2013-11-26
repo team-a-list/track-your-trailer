@@ -33,9 +33,21 @@ $(document).ready(function () {
 
  $(window).load(function(){
 
+    var items = 3;
+    if (screen.width < 900) {
+      items = 2;
+    }
+    else if (screen.width < 600) {
+      items = 1;
+    }
+
     $('.flexslider').flexslider({
         animation: "slide",
         slideshow: true,
+        itemWidth: 300,
+        itemMargin: 20,
+        minItems: items,
+        move: 1,
         start: function(slider){
           $('body').removeClass('loading');
         }
