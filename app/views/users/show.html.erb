@@ -10,7 +10,7 @@
         <!-- Gallery Items
         ================================================== -->
   <% @user.movies.each do |movie| %>
-        <div class="span12 gallery-single"><br>
+        <div class="span12 gallery-single">
             <div class="row">
                 <div class="span0">
                 </div>
@@ -32,8 +32,9 @@
                     </ul>
                 </div>
             </div>
+             <ul class="showpagetext project-info"><li></li><ul>
         </div><!-- End gallery-single-->
-            <ul class="showpagetext project-info"><li> -</li><ul>
+
         <% end %>
 
     </div><!-- End container row -->

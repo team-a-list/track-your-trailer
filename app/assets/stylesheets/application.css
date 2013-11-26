@@ -17,6 +17,9 @@
  *= require_tree .
  */
 
+ .info-page-div {
+  margin-left: 20px;
+ }
 
  .row {
   margin-bottom: 10px;
@@ -225,8 +228,13 @@ li.span4 .project-details {
   }
 
   .span12.gallery {
-  margin: 0px 10px 0px;
+  margin: 0px -10px 0px;
   text-align: center;
 }
+
+  .span7 {
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+  }
 
 }
