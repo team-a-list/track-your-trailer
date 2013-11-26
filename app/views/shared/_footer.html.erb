@@ -1,0 +1,31 @@
+    <!-- Footer Area
+        ================================================== -->
+
+    <div class="footer-container"><!-- Begin Footer -->
+        <div class="container">
+            <div class="row footer-row">
+                <div class="span3 footer-col">
+
+            <h4>TRACK YOUR TRAILER</h4>
+            <div class="row"><!-- Begin Sub Footer -->
+                <div class="span12 footer-col footer-sub">
+                    <div class="row no-margin">
+                        <div class="span6"><span class="left">© 2013 The Flatiron School. <a href="https://twitter.com/gregeng">Greg Eng</a>, <a href="https://twitter.com/davidhenrybella">David Bella</a>, <a href="https://twitter.com/emilyxxie">Emily Xie</a></span></div>
+                        <div class="span6">
+                            <span class="right">
+                            <%= link_to "Home", root_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <%= link_to "All Movies", all_movies_path %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        <% if !current_user.nil? %>
+                            <%= link_to "My Movies", current_user %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <a href="<%= edit_user_registration_path %>">My Info</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        <% end %>
+                            <%= link_to "Logout", logout_path %>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sub Footer -->
+
+        </div>
+    </div><!-- End Footer -->
