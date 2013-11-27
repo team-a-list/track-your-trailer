@@ -1,4 +1,4 @@
-<div class="span12"><h2>Movies I Wanna See:</h2><br><br></div>
+<div class="span12"><h2>My Movies:</h2><br><br></div>
 
 
 
@@ -11,7 +11,6 @@
         ================================================== -->
   <% @user.movies.each do |movie| %>
         <div class="span12 gallery-single">
-
             <div class="row">
                 <div class="span0">
                 </div>
@@ -25,7 +24,7 @@
 <!--                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac.</p>
  -->
                     <ul class="showpagetext project-info">
-                        <li>In Theaters:&nbsp;&nbsp;&nbsp;<%= movie.release_date_theater.to_formatted_s(:nice_date) %></h6></li>
+                        <li>In Theaters:&nbsp;&nbsp;&nbsp;<%= movie.release_date_theater ? movie.release_date_theater.to_formatted_s(:nice_date) : "Check back soon!" %></h6></li>
                         <li>On DVD:&nbsp;&nbsp;&nbsp;<%= movie.release_date_dvd ? movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></li>
                         <li>
                             <%= link_to "Remove From My List", user_movie_path(@user, movie), :method => :delete, data: { confirm: 'Are you sure?' } %>
@@ -33,7 +32,9 @@
                     </ul>
                 </div>
             </div>
+             <ul class="showpagetext project-info"><li></li><ul>
         </div><!-- End gallery-single-->
+
         <% end %>
 
     </div><!-- End container row -->
