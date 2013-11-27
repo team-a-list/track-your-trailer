@@ -17,6 +17,24 @@
  *= require_tree .
  */
 
+
+/*THIS IS STUFF FOR IF WE WANTED TO CREATE A MORE COMPLICATED INDEX PAGE INFO
+  .info-float-right {
+  float: right;
+  width: 50%;
+ }
+
+ .info-float-left {
+  float: left;
+  width: 50%;
+ }
+
+ */
+
+ .subheadline {
+  text-align: left;
+ }
+
 .navbar .nav > li > a:hover {
   color: #EF4F1D;
 }
