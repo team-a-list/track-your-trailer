@@ -23,8 +23,8 @@
         <div class="span12 gallery">
             <br>
             <br>
-            <h5 class="title-bg">What's This
-                <small> all about?</small>
+            <h5 class="title-bg">About &nbsp
+                <small> Track Your Trailer</small>
                 <button class="btn btn-mini hidden-phone" type="button">View Portfolio</button>
             </h5>
         </div>
@@ -36,7 +36,12 @@
             <!--<p class="subheadline" align="center">-Find a movie you like.<br>-<em>Track</em> it.<br>-We'll let you know when it's out!</p>-->
             <p>
                 <div class="subheadline">
-                    <br>Find a Movie ...<br><br> <em>Track</em> it! ...<br><br> We'll let you know when it comes out!<br><br>
+
+                          <p>Welcome to Track Your Trailer. Search for upcoming movies you want to see. We’ll send you text and email reminders when they come out. Never worry about missing great movies again. We've got your back.</p>
+
+                          <% if !current_user %>
+                            <%= link_to "Sign Up Now >>", new_user_registration_path %>
+                            <% end %>
                 </div>
             </p>
         </div>
@@ -45,8 +50,8 @@
     <div class="row gallery-row"><!-- Begin Gallery Row -->
 
         <div class="span12 gallery">
-            <h5 class="title-bg">Upcoming Movies
-                <small> . . . Check Them Out</small>
+            <h5 class="title-bg">Upcoming Movies &nbsp
+                <small>For You</small>
                 <button class="btn btn-mini hidden-phone" type="button">View Portfolio</button>
             </h5>
             <div class="row clearfix">
