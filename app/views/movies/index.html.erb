@@ -35,12 +35,17 @@
             <!-- <h3>Track Your Trailer</h3> -->
             <!--<p class="subheadline" align="center">-Find a movie you like.<br>-<em>Track</em> it.<br>-We'll let you know when it's out!</p>-->
             <p>
-                <div class="subheadline">
+                <div class="subheadline" style="text-align: center;">
 
-                          <p>Welcome to Track Your Trailer. Search for upcoming movies you want to see. We’ll send you text and email reminders when they come out. Never worry about missing great movies again. We've got your back.</p>
+                          <p><br>Welcome to Track Your Trailer!<br><br>
+                            Search for upcoming movies you want to see.<br>
+                            Add them to your personal list.<br>
+                            We’ll send you text and email reminders when they come out.<br>
+                            Never worry about missing great movies again.<br><br>
+                            We've got your back.<br><br></p>
 
                           <% if !current_user %>
-                            <%= link_to "Sign Up Now >>", new_user_registration_path %>
+                            <%= link_to "Sign Up Now >>", new_user_registration_path %><br><br>
                             <% end %>
                 </div>
             </p>
