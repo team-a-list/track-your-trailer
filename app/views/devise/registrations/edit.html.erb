@@ -1,29 +1,29 @@
 <div class="info-page-div">
 <h2>My Info</h2>
-
+<br>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div><%= f.label :email %>
+  <%= f.email_field :email, :autofocus => true %></div><br>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name, :value => current_user.name %></div>
+  <div><%= f.label :name %>
+  <%= f.text_field :name, :value => current_user.name %></div><br>
 
-  <div><%= f.label :phone_number %><br />
-  <%= f.phone_field :phone_number, :value => current_user.phone_number %></div>
+  <div><%= f.label :phone_number %>
+  <%= f.phone_field :phone_number, :value => current_user.phone_number %></div><br>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div><br>
   <% end %>
 
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+  <%= f.password_field :password, :autocomplete => "off" %></div><br>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></div><br>
 
   <div><%= f.label :current_password %> <i>(we need your password to confirm changes)</i><br />
-  <%= f.password_field :current_password %></div>
+  <%= f.password_field :current_password %></div><br>
 
   <div><%= f.submit "Update", class: "btn" %></div>
 <% end %>
