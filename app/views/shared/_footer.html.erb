@@ -18,8 +18,10 @@
                         <% if !current_user.nil? %>
                             <%= link_to "My Movies", current_user %>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                             <a href="<%= edit_user_registration_path %>">My Info</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        <% end %>
                             <%= link_to "Logout", logout_path %>
+                        <% else  %>
+                            <%= link_to "Login", login_path %>
+                        <% end %>
                             </span>
 
                         </div>
