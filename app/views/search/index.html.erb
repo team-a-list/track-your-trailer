@@ -12,11 +12,13 @@
             <% else %>
                 <% @results.each do |movie| %>
                     <li  class="span4 gallery-item" data-id="id-1" data-type="tag1">
+                    <span class="link-like" onclick="window.location='<%= movie_path(movie) %>'">
                         <span class="gallery-hover-3col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
                                 <%= link_to "", user_movies_path(current_user, :movie_id => movie), :method => :post, class: "item-details-link" %>
                             </span>
                         </span>
+                    </span>
                         <a href="<%= movie_path(movie) %>"><img src="<%= movie.poster_image %>" class="thumbnail-movie" alt="Gallery"></a>
                         <span class="project-details"><a href="<%= movie_path(movie) %>"><%= movie.name %></a><br>Theaters: <%= movie.release_date_theater ? movie.release_date_theater.to_formatted_s(:nice_date) : "Check back soon!" %><br>DVD: <%= movie.release_date_dvd ? movie.release_date_dvd.to_formatted_s(:nice_date) : "Check back soon!" %></span>
                     </li>

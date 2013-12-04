@@ -34,6 +34,11 @@
  .tagline {
   text-transform: none;
   color: #282828;
+}
+
+ .link-like {
+  cursor: pointer;
+
  }
 
  .subheadline {
