@@ -611,3 +611,8 @@
         </center>
     </body>
 </html>
+
+<p>Welcome to TrackYourTrailer</p>
+<p>Congratulations on joining in on the world's premier movie release reminder service.<br>
+Please verify your account's email address by clicking on the the link below:</p>
+<p><%= link_to 'Verify my account', confirmation_url(@resource, :confirmation_token => @token) %></p>
