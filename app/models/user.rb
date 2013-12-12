@@ -12,9 +12,9 @@ class User < ActiveRecord::Base
   after_save :verify_phone_number
 
   def self.users_for(notify_day = 0)
-    movie_list = Movie.includes(:users).movies_released(notify_day)
-    movie_list.map{|movie| movie.users}.flatten.uniq
-    #UserMovie.where(:movie_id => movie_list)
+    # movie_list = Movie.includes(:users).movies_released(notify_day)
+    # movie_list.map{|movie| movie.users}.flatten.uniq
+     User.joins(:movies).where(:movies => {:id => Movie.movies_released(notify_day)}).uniq
   end
 
   def movie_notifications(notify_day = 0)
