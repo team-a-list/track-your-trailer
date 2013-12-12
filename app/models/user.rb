@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   def self.users_for(notify_day = 0)
     User.joins(:movies).where(:movies => {:id => Movie.movies_released(notify_day)}).uniq
+    # movie_list = Movie.includes(:users).movies_released(notify_day)
+    # movie_list.map{|movie| movie.users}.flatten.uniq
   end
 
   def movie_notifications(notify_day = 0)
