@@ -39,7 +39,7 @@ class Movie < ActiveRecord::Base
   end
 
   def update_from_rotten(movie_hash)
-    original_movie_poster = self.defend_against_thumbnail_images(movie_hash["posters"]["original"])
+    original_movie_poster = Movie.defend_against_thumbnail_images(movie_hash["posters"]["original"])
 
     self.update(
         :name => movie_hash["title"],
