@@ -3,7 +3,10 @@ TrackYourTrailer
 
 #### A Rails web application that takes the guesswork out of movie night! ####
 
-###### Search for upcoming movies you want to see. Add them to your personal list. We’ll send you text and email reminders when they come out. Never worry about missing great movies again. ######
+###### 1. Search for upcoming movies you want to see. ######
+###### 2. Add them to your personal list. ######
+###### 3. We’ll send you text and email reminders when they come out. ######
+###### 4. Never worry about missing great movies again. ######
 
 ##### General Information: ####
 - Utilizes the <a href="http://developer.rottentomatoes.com/" targt="_blank">Rotten Tomatoes API</a> to power content on the site
