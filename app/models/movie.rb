@@ -20,11 +20,13 @@ class Movie < ActiveRecord::Base
   end
 
   def self.create_from_rotten(movie_hash)
+    original_movie_poster = defend_against_thumbnail_images(movie_hash["posters"]["original"])
+
     Movie.where(:rotten_tomatoes_uri => movie_hash["id"]).first_or_create(
         :name => movie_hash["title"],
         :release_date_theater => movie_hash["release_dates"]["theater"],
         :release_date_dvd => movie_hash["release_dates"]["dvd"],
-        :poster_image => movie_hash["posters"]["original"],
+        :poster_image => original_movie_poster,
         :rotten_tomatoes_uri => movie_hash["id"],
         :poster_image_small => movie_hash["posters"]["thumbnail"],
         :synopsis => movie_hash["synopsis"],
@@ -37,15 +39,28 @@ class Movie < ActiveRecord::Base
   end
 
   def update_from_rotten(movie_hash)
+    original_movie_poster = self.defend_against_thumbnail_images(movie_hash["posters"]["original"])
+
     self.update(
         :name => movie_hash["title"],
         :release_date_theater => movie_hash["release_dates"]["theater"],
         :release_date_dvd => movie_hash["release_dates"]["dvd"],
-        :poster_image => movie_hash["posters"]["original"],
+        :poster_image => original_movie_poster,
         :rotten_tomatoes_uri => movie_hash["id"],
         :poster_image_small => movie_hash["posters"]["thumbnail"],
         :synopsis => movie_hash["synopsis"],
         :rotten_tomatoes_link => movie_hash["links"]["alternate"]
     )
   end
+
+  private
+
+  def self.defend_against_thumbnail_images(poster_url)
+    if poster_url.include?('tmb')
+      poster_url.gsub('tmb', 'ori')
+    elsif poster_url.include?('_thumb')
+      poster_url.gsub('_thumb', '')
+    end
+  end
+
 end
