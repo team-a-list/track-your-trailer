@@ -20,10 +20,7 @@ class Movie < ActiveRecord::Base
   end
 
   def self.create_from_rotten(movie_hash)
-    # raise
-    # if !Movie.find_by(:rotten_tomatoes_uri => movie_hash["id"])
     Movie.where(:rotten_tomatoes_uri => movie_hash["id"]).first_or_create(
-      # Movie.create(
         :name => movie_hash["title"],
         :release_date_theater => movie_hash["release_dates"]["theater"],
         :release_date_dvd => movie_hash["release_dates"]["dvd"],
@@ -33,7 +30,6 @@ class Movie < ActiveRecord::Base
         :synopsis => movie_hash["synopsis"],
         :rotten_tomatoes_link => movie_hash["links"]["alternate"]
       )
-    # end
   end
 
   def self.find_movies_without_release_dates
@@ -52,18 +48,4 @@ class Movie < ActiveRecord::Base
         :rotten_tomatoes_link => movie_hash["links"]["alternate"]
     )
   end
-
-# but first well have to use rotten tomatoes to search and get the ids to begin with !!
-
-# We want to display a list of movies (5) that a use searches for.
-# It should display movies from our database if we have them
-# but if we dont ... then we gotta get em from rotten tomatoes
-# in the controller .. the user will enter a string in the search parameters.
-
-# def search end
-  # it will call the 2 methods in the RT api
-  # then it will perform logic to get the movie ids out of that call
-  # then it will call display movies from the movie.rb and pass in the movie ids in an array
-  # then it ill redirect to the search index page
-
 end

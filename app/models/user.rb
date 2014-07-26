@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable
   has_many :user_movies
   has_many :movies, :through => :user_movies
@@ -12,8 +10,6 @@ class User < ActiveRecord::Base
   after_save :verify_phone_number
 
   def self.users_for(notify_day = 0)
-    # movie_list = Movie.includes(:users).movies_released(notify_day)
-    # movie_list.map{|movie| movie.users}.flatten.uniq
      User.joins(:movies).where(:movies => {:id => Movie.movies_released(notify_day)}).uniq
   end
 
