@@ -16,3 +16,6 @@
 
 # Ignore output from simplecov
 /coverage
+
+# Ignore the development database
+/db/development.sqlite3
