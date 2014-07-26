@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   skip_before_filter :authenticate_user!, :only => [:verify_text]
 
   def index
-    # if admin
     @users = User.all
     redirect_to root_path
   end
