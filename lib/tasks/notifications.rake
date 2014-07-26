@@ -1,5 +1,4 @@
 namespace :notify do
-
   def days_ahead(args)
     if args.class == Fixnum
       args
@@ -30,11 +29,9 @@ namespace :notify do
     Rake::Task["notify:text"].execute(args)
     Rake::Task["notify:email"].execute(args)
   end
-
 end
 
 namespace :populate do
-
   task :theater => :environment do
     RottenTomatoesApi.seed_upcoming_theater
   end
@@ -42,11 +39,16 @@ namespace :populate do
   task :dvd => :environment do
     RottenTomatoesApi.seed_upcoming_dvds
   end
-
 end
 
 namespace :update do
   task :movies => :environment do
     RottenTomatoesApi.update_existing_movies
   end
+
+  task :movie_poster_images => :environment do
+    RottenTomatoesApi.update_movie_default_posters
+    RottenTomatoesApi.update_movie_posters
+  end
+
 end

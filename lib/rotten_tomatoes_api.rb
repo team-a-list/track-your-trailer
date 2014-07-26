@@ -55,4 +55,22 @@ class RottenTomatoesApi
     end
   end
 
+  def self.update_movie_default_posters
+    movies = Movie.arel_table
+    default_thumbnail_poster_movies = Movie.where(movies[:poster_image].matches("%_thumb%"))
+    default_thumbnail_poster_movies.each do |movie|
+      replacement_image = movie.poster_image.gsub('_thumb', '')
+      movie.update_attribute(:poster_image, replacement_image)
+    end
+  end
+
+  def self.update_movie_posters
+    movies = Movie.arel_table
+    thumbnail_poster_movies = Movie.where(movies[:poster_image].matches("%tmb%"))
+    thumbnail_poster_movies.each do |movie|
+      replacement_image = movie.poster_image.gsub('tmb', 'ori')
+      movie.update_attribute(:poster_image, replacement_image)
+    end
+  end
+
 end
