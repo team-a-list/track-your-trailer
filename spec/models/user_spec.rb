@@ -5,7 +5,7 @@ describe User do
     it "should have a name" do
       user = FactoryGirl.create(:user)
       user.name.should eq("Emily")
-    end 
+    end
 
     it "should have a valid password" do
       user = FactoryGirl.create(:user)
@@ -19,7 +19,7 @@ describe User do
 
     it "should have a phone number" do
       user = FactoryGirl.create(:user)
-      user.phone_number.should eq("555-555-5555")
+      user.phone_number.should eq("15555555555")
     end
 
   end
