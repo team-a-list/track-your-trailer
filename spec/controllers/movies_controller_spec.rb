@@ -18,4 +18,12 @@ describe MoviesController do
     end
   end
 
+  describe 'GET#ALL_MOVIES' do
+    it "should respond with a 200 request" do
+      get :all_movies
+      expect(response.status).to eq(200)
+      expect(response).to render_template :all_movies
+    end
+  end
+
 end
