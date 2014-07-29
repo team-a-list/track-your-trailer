@@ -85,6 +85,19 @@ describe Movie do
       dvd_movie = create(:movie, release_date_dvd: Time.zone.now.days_since(3).beginning_of_day)
       expect(Movie.movies_released(3)).to include(theater_movie, dvd_movie)
     end
+
+    it 'can defend against thumbnail image urls when no poster is found' do
+      poster_url = "http://d1rjibvava1hwe.cloudfront.net/static/images/redesign/poster_default_thumb.gif"
+      sanitized_url = Movie.defend_against_thumbnail_images(poster_url)
+      expect(sanitized_url).to_not include("thumb")
+    end
+
+    it 'can defend against thumbnail image urls for movies with poster images' do
+      poster_url = "http://content7.flixster.com/movie/11/17/81/11178109_tmb.jpg"
+      sanitized_url = Movie.defend_against_thumbnail_images(poster_url)
+      expect(sanitized_url).to_not include("tmb")
+      expect(sanitized_url).to include("ori")
+    end
   end
 
   describe 'Associations' do

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'View the homepage', js: true do
+feature 'View the homepage' do
   scenario 'user sees the header title' do
     visit root_path
     expect(page).to have_css 'h1', text: 'TRACK YOUR TRAILER'
