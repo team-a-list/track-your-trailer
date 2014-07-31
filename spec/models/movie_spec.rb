@@ -86,6 +86,14 @@ describe Movie do
       expect(Movie.movies_released(3)).to include(theater_movie, dvd_movie)
     end
 
+    it 'returns movies without release dates in order to update itself' do
+      theater_movie = create(:movie, release_date_theater: nil)
+      dvd_movie = create(:movie, release_date_dvd: nil)
+      expect(Movie.find_movies_without_release_dates).to include(theater_movie, dvd_movie)
+      expect(Movie.find_movies_without_release_dates.size).to eq(2)
+    end
+
+
     it 'can defend against thumbnail image urls when no poster is found' do
       poster_url = "http://d1rjibvava1hwe.cloudfront.net/static/images/redesign/poster_default_thumb.gif"
       sanitized_url = Movie.defend_against_thumbnail_images(poster_url)
