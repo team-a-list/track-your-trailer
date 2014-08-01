@@ -8,7 +8,7 @@ class TwilioApi
       :to => user.phone_number,
       :from => NUMBER )
     puts message.sid
-    message.sid
+    message
   end
 
   def self.notify(user, notify_day)
@@ -17,17 +17,17 @@ class TwilioApi
       :to => user.phone_number,
       :from => NUMBER )
     puts message.sid
-    message.sid
+    message
   end
 
-  def self.send_verification(user)
+  def self.send_verification(user, url=Rails.application.config.url)
     message = @CLIENT.account.sms.messages.create(
-      :body => "Verify your TrackYourTrailer phone # at http://#{Rails.application.config.url}/v/#{user.text_token}",
+      :body => "Verify your TrackYourTrailer phone # at http://#{url}/v/#{user.text_token}",
       :to => user.phone_number,
       :from => NUMBER
     )
     puts message.sid
-    message.sid
+    message
   end
 
 end

@@ -12,6 +12,10 @@ FactoryGirl.define do
     confirmed_at { "2014-07-31 05:59:19.049549" }
     confirmation_sent_at { "2014-07-31 05:59:13.789266" }
     end
+
+    factory :text_verified_user do
+      text_token { 3333 }
+    end
   end
 
 end
