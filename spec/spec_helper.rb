@@ -29,6 +29,8 @@ RSpec.configure do |config|
   end
 
   config.include Capybara::DSL
+  config.include Devise::TestHelpers, :type => :controller
+
 
   # ## Mock Framework
   #
