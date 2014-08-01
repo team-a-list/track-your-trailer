@@ -8,6 +8,7 @@ class TwilioApi
       :to => user.phone_number,
       :from => NUMBER )
     puts message.sid
+    message.sid
   end
 
   def self.notify(user, notify_day)
@@ -16,6 +17,7 @@ class TwilioApi
       :to => user.phone_number,
       :from => NUMBER )
     puts message.sid
+    message.sid
   end
 
   def self.send_verification(user)
@@ -25,6 +27,7 @@ class TwilioApi
       :from => NUMBER
     )
     puts message.sid
+    message.sid
   end
 
 end
