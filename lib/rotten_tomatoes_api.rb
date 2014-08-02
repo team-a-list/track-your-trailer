@@ -5,8 +5,6 @@ class RottenTomatoesApi
     search_results = HTTParty.get("http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=#{ENV['API_KEY']}&q=#{URI.escape(search_string)}&page_limit=6", :format => :json)
     if search_results.has_key?("movies")
       search_results
-    else
-      self.upcoming_movies
     end
   end
 
