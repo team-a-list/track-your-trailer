@@ -103,6 +103,17 @@ describe RottenTomatoesApi do
       expect(updateable_movie_count).to eq(2)
       expect(updated_movie_count).to eq(0)
     end
+
+    it "can update all movies when the method is triggered" do
+      movie = create(:nil_release_date_dvd_movie)
+      movie = create(:nil_release_date_theater_movie)
+      preupdated_movies_count = Movie.find_movies_without_release_dates.size
+      RottenTomatoesApi.update_all_movies
+      postupdated_movies_count = Movie.find_movies_without_release_dates.size
+
+      expect(preupdated_movies_count).to eq(2)
+      expect(postupdated_movies_count).to eq(0)
+    end
   end
 
 end
