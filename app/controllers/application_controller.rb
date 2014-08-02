@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def valid_session
+    {"warden.user.user.key" => session["warden.user.user.key"]}
+  end
+
 end
