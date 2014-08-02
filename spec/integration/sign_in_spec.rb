@@ -14,6 +14,8 @@ feature 'Sign in to an account' do
 
   scenario 'completes a login' do
     create(:confirmed_user)
+    movie = create(:movie)
+
     visit root_path
     click_link('top-nav-login')
     fill_in('Email', :with => 'greg.eng@gmail.com')
