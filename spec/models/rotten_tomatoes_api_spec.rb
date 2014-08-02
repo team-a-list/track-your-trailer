@@ -114,6 +114,25 @@ describe RottenTomatoesApi do
       expect(preupdated_movies_count).to eq(2)
       expect(postupdated_movies_count).to eq(0)
     end
+
+    it "should update saved movie poster image urls to show higher quality posters" do
+      original_movie = create(:thumbnail_poster_image_movie)
+      RottenTomatoesApi.update_movie_posters
+      updated_movie = Movie.find(original_movie.id)
+
+      expect(original_movie.poster_image).to include("tmb")
+      expect(updated_movie.poster_image).to_not include("tmb")
+      expect(updated_movie.poster_image).to include("ori")
+    end
+
+    it "should update saved default movie poster image urls to show higher quality default posters" do
+      original_movie = create(:default_poster_image_movie)
+      RottenTomatoesApi.update_movie_default_posters
+      updated_movie = Movie.find(original_movie.id)
+
+      expect(original_movie.poster_image).to include("_thumb")
+      expect(updated_movie.poster_image).to_not include("_thumb")
+    end
   end
 
 end

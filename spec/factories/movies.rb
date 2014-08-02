@@ -33,5 +33,13 @@ FactoryGirl.define do
       name { "True Grit" }
       rotten_tomatoes_uri { 770860165 }
     end
+
+    factory :thumbnail_poster_image_movie do
+      poster_image { "http://content7.flixster.com/movie/11/17/81/11178109_tmb.jpg" }
+    end
+
+    factory :default_poster_image_movie do
+      poster_image { "http://d1rjibvava1hwe.cloudfront.net/static/images/redesign/poster_default_thumb.gif" }
+    end
   end
 end
