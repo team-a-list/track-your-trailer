@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe RottenTomatoesApi do
-  describe 'general content query methods' do
+  describe 'search query methods' do
     it 'should allow searches with valid search strings' do
       search_string = "Toy Story"
       search_results = RottenTomatoesApi.search(search_string)
@@ -19,7 +19,9 @@ describe RottenTomatoesApi do
       expect(search_results).to have_key("movies")
       expect(search_results["movies"].length).to eq(0)
     end
+  end
 
+  describe 'general content query methods' do
     it 'should query rotten tomatoes for upcoming theater releases' do
       upcoming_theater_releases = RottenTomatoesApi.upcoming_movies
 
@@ -58,14 +60,36 @@ describe RottenTomatoesApi do
       expect(rt_movie_object).to have_key("id")
       expect(rt_movie_object["id"]).to eq(movie.rotten_tomatoes_uri)
     end
-
-
-
-
   end
 
-
   describe 'content seeding methods' do
+    it "can persist 6 new movies from the upcoming movies endpoint at a time" do
+      original_movie_count = Movie.all.size
+      RottenTomatoesApi.seed_upcoming_theater
+      post_seed_movie_count = Movie.all.size
+
+      expect(original_movie_count).to eq(0)
+      expect(post_seed_movie_count).to eq(6)
+    end
+
+    it "can persist 6 new dvds from the upcoming dvds endpoint at a time" do
+      original_dvd_count = Movie.all.size
+      RottenTomatoesApi.seed_upcoming_dvds
+      post_seed_dvd_count = Movie.all.size
+
+      expect(original_dvd_count).to eq(0)
+      expect(post_seed_dvd_count).to eq(6)
+    end
+
+    it "can persist new movies from the search endpoint" do
+      search_string = "Toy Story"
+      original_movie_count = Movie.all.size
+      RottenTomatoesApi.seed_search(search_string)
+      post_seed_movie_count = Movie.all.size
+
+      expect(original_movie_count).to eq(0)
+      expect(post_seed_movie_count).to be > 0
+    end
   end
 
   describe 'content updating methods' do
