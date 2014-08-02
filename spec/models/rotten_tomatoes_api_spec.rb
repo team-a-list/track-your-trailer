@@ -11,6 +11,17 @@ describe RottenTomatoesApi do
         expect(search_results.length).to be <= (6)
         expect(search_results).to have_key("movies")
       end
+
+      it 'should fall back upcoming movies if the search returns no results' do
+        search_string = "1NVAL1D M0VI3"
+        search_results = RottenTomatoesApi.search(search_string)
+
+        binding.pry
+
+        expect(search_results.class).to eq(HTTParty::Response)
+        expect(search_results.length).to be <= (6)
+        expect(search_results).to have_key("movies")
+      end
     end
 
   end
