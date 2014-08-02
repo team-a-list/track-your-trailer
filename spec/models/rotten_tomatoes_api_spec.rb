@@ -8,19 +8,17 @@ describe RottenTomatoesApi do
         search_results = RottenTomatoesApi.search(search_string)
 
         expect(search_results.class).to eq(HTTParty::Response)
-        expect(search_results.length).to be <= (6)
         expect(search_results).to have_key("movies")
+        expect(search_results["movies"].length).to be <= (6)
       end
 
-      it 'should fall back upcoming movies if the search returns no results' do
+      it 'should not error if no movies are found via search' do
         search_string = "1NVAL1D M0VI3"
         search_results = RottenTomatoesApi.search(search_string)
 
-        binding.pry
-
         expect(search_results.class).to eq(HTTParty::Response)
-        expect(search_results.length).to be <= (6)
         expect(search_results).to have_key("movies")
+        expect(search_results["movies"].length).to eq(0)
       end
     end
 
