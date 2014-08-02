@@ -21,4 +21,16 @@ feature 'Sign in to an account' do
     click_button('Sign in')
     expect(page).to have_css '.notice', text: 'Signed in successfully.'
   end
+
+  scenario 'logs out' do
+    create(:confirmed_user)
+    visit root_path
+    click_link('top-nav-login')
+    fill_in('Email', :with => 'greg.eng@gmail.com')
+    fill_in('Password', :with => 'password')
+    click_button('Sign in')
+    click_link('top-nav-logout')
+
+    expect(page).to have_css 'a', text: 'Login'
+  end
 end

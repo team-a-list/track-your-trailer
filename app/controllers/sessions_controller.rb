@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       login(user.id)
       redirect_to(root_path)
-    else 
+    else
       render :new
     end
   end
