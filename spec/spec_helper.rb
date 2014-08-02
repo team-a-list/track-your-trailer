@@ -62,3 +62,9 @@ RSpec.configure do |config|
   # Include Factory Girl syntax to simplify test calls
   config.include FactoryGirl::Syntax::Methods
 end
+
+def authenticate_user
+  user = double('user')
+  request.env['warden'].stub :authenticate! => user
+  allow(controller).to receive(:current_user) { user }
+end
