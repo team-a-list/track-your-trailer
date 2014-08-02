@@ -21,5 +21,13 @@ FactoryGirl.define do
       name { "Toy Story" }
       rotten_tomatoes_uri { 770672122 }
     end
+
+    factory :nil_release_date_theater do
+      release_date_theater { nil }
+    end
+
+    factory :nil_release_date_dvd do
+      release_date_dvd { nil }
+    end
   end
 end

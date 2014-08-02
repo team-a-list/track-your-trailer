@@ -93,6 +93,9 @@ describe RottenTomatoesApi do
   end
 
   describe 'content updating methods' do
+
+
+
   end
 
 end
