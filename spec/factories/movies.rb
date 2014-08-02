@@ -16,5 +16,10 @@ FactoryGirl.define do
     factory :dvd_movie_today do
       release_date_dvd { Time.zone.now.beginning_of_day }
     end
+
+    factory :specific_movie do
+      name { "Toy Story" }
+      rotten_tomatoes_uri { 770672122 }
+    end
   end
 end

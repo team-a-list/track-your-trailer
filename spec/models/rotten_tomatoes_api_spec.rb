@@ -50,6 +50,16 @@ describe RottenTomatoesApi do
       expect(dvd_release_date.to_time).to be > Time.now
     end
 
+    it "should query for a specific movie using it's rotten tomatoes id" do
+      movie = create(:specific_movie)
+      rt_movie_object = RottenTomatoesApi.get_movie(movie.rotten_tomatoes_uri)
+
+      expect(rt_movie_object.class).to eq(HTTParty::Response)
+      expect(rt_movie_object).to have_key("id")
+      expect(rt_movie_object["id"]).to eq(movie.rotten_tomatoes_uri)
+    end
+
+
 
 
   end
