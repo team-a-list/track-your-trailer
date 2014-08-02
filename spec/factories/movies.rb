@@ -18,16 +18,20 @@ FactoryGirl.define do
     end
 
     factory :specific_movie do
-      name { "Toy Story" }
+      name { "Toy Story 3" }
       rotten_tomatoes_uri { 770672122 }
     end
 
-    factory :nil_release_date_theater do
+    factory :nil_release_date_theater_movie do
       release_date_theater { nil }
+      name { "Captain America: The First Avenger" }
+      rotten_tomatoes_uri { 770739679 }
     end
 
-    factory :nil_release_date_dvd do
+    factory :nil_release_date_dvd_movie do
       release_date_dvd { nil }
+      name { "True Grit" }
+      rotten_tomatoes_uri { 770860165 }
     end
   end
 end

@@ -93,9 +93,16 @@ describe RottenTomatoesApi do
   end
 
   describe 'content updating methods' do
+    it "can update existing movies when they have new changed meta data information" do
+      movie = create(:nil_release_date_dvd_movie)
+      movie = create(:nil_release_date_theater_movie)
+      updateable_movie_count = Movie.find_movies_without_release_dates.size
+      RottenTomatoesApi.update_existing_movies
+      updated_movie_count = Movie.find_movies_without_release_dates.size
 
-
-
+      expect(updateable_movie_count).to eq(2)
+      expect(updated_movie_count).to eq(0)
+    end
   end
 
 end
