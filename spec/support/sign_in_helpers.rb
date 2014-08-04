@@ -21,7 +21,6 @@ module SignInHelpers
 
 end
 
-
-Rspec.configure do |config|
+RSpec.configure do |config|
   config.include SignInHelpers
 end
