@@ -38,4 +38,3 @@ feature 'Add a movie to my movies' do
     expect(page).to_not have_css '.profile-movie'
   end
 end
-
